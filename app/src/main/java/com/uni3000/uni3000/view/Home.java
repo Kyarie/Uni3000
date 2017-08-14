@@ -1,4 +1,4 @@
-package com.uni3000.uni3000;
+package com.uni3000.uni3000.view;
 
 import android.annotation.SuppressLint;
 import android.support.v7.app.ActionBar;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.uni3000.uni3000.R;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
