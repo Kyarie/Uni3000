@@ -5,4 +5,5 @@ package com.uni3000.uni3000.model;
  */
 
 public class User {
+    public int num;
 }

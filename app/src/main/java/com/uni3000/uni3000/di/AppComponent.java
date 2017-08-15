@@ -18,5 +18,5 @@ public interface AppComponent {
         AppComponent build();
     }
 
-    void inject(Uni3000App app);
+    void inject(Uni3000App application);
 }

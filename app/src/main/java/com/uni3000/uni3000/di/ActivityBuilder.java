@@ -1,20 +1,13 @@
 package com.uni3000.uni3000.di;
 
-import android.app.Activity;
-
-import dagger.Binds;
 import dagger.Module;
-import dagger.android.ActivityKey;
-import dagger.android.AndroidInjector;
-import dagger.multibindings.IntoMap;
-import com.uni3000.uni3000.view.main.MainActivity;
-import com.uni3000.uni3000.view.main.MainActivityComponent;
+import dagger.android.ContributesAndroidInjector;
+import com.uni3000.uni3000.view.home.HomeActivity;
+import com.uni3000.uni3000.view.home.HomeModule;
 
 @Module
 public abstract class ActivityBuilder {
 
-    @Binds
-    @IntoMap
-    @ActivityKey(MainActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindMainActivity(MainActivityComponent.Builder builder);
+    @ContributesAndroidInjector(modules = HomeModule.class)
+    abstract HomeActivity bindHomeActivity();
 }
