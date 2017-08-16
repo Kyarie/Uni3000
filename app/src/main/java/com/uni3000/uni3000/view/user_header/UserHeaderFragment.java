@@ -7,9 +7,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.uni3000.uni3000.R;
 import dagger.android.support.AndroidSupportInjection;
+import com.uni3000.uni3000.controller.UserController;
+import javax.inject.Inject;
+import com.uni3000.uni3000.viewmodel.UserViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,10 +24,11 @@ import dagger.android.support.AndroidSupportInjection;
  * create an instance of this fragment.
  */
 public class UserHeaderFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
+    @Inject
+    UserController userController;
+
+    UserViewModel user;
 
     private OnFragmentInteractionListener mListener;
 
@@ -31,15 +36,6 @@ public class UserHeaderFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UserHeaderFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static UserHeaderFragment newInstance() {
         UserHeaderFragment fragment = new UserHeaderFragment();
         Bundle args = new Bundle();
@@ -50,6 +46,7 @@ public class UserHeaderFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        user = userController.getCurrentUserInfo();
     }
 
     @Override
@@ -57,6 +54,15 @@ public class UserHeaderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user_header, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        TextView usernameText = (TextView)getView().findViewById(R.id.username);
+        usernameText.setText(user.username);
+        TextView levelText = (TextView)getView().findViewById(R.id.userLevel);
+        levelText.setText(Integer.toString(user.level));
     }
 
     // TODO: Rename method, update argument and hook method into UI event

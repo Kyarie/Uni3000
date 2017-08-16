@@ -1,9 +1,22 @@
 package com.uni3000.uni3000.model;
 
-/**
- * Created by dora-_000 on 2017-08-14.
- */
-
 public class User {
-    public int num;
+    public String username;
+    public int level;
+
+
+    public User() {
+        this.username = this.getCurrentUsername();
+        this.level = this.getCurrentUserLevel();
+    }
+
+    String getCurrentUsername() {
+        // Get from storage
+        return "Bob";
+    }
+
+    int getCurrentUserLevel() {
+        // Get from storage
+        return 0;
+    }
 }

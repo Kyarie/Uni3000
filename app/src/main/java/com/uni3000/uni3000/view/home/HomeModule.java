@@ -6,8 +6,5 @@ import com.uni3000.uni3000.model.User;
 
 @Module
 public class HomeModule {
-    @Provides
-    User provideMainView(){
-        return new User();
-    }
+
 }

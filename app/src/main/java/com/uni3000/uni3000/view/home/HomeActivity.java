@@ -19,15 +19,11 @@ public class HomeActivity extends AppCompatActivity implements HasSupportFragmen
     @Inject
     DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
 
-    @Inject
-    User user;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        user.num = 1;
 
         if (savedInstanceState == null)
             getSupportFragmentManager()
