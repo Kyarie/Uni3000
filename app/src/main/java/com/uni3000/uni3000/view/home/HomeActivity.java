@@ -11,7 +11,6 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 import com.uni3000.uni3000.R;
-import com.uni3000.uni3000.model.User;
 import com.uni3000.uni3000.view.user_header.UserHeaderFragment;
 
 public class HomeActivity extends AppCompatActivity implements HasSupportFragmentInjector {

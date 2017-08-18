@@ -1,23 +1,20 @@
 package com.uni3000.uni3000.controller;
 
-import dagger.Module;
-
 import javax.inject.Inject;
-import javax.inject.Singleton;
-import dagger.Provides;
-import com.uni3000.uni3000.model.User;
+
 import com.uni3000.uni3000.viewmodel.UserViewModel;
+import com.uni3000.uni3000.model.Interface.IUser;
 
 public class UserController {
 
+    private IUser user;
+
     @Inject
-    public UserController() {
-        this.user = new User();
+    public UserController(IUser user) {
+        this.user = user;
     }
 
-    User user;
-
     public UserViewModel getCurrentUserInfo() {
-        return new UserViewModel(this.user.username, this.user.level);
+        return new UserViewModel(this.user.getUsername(), this.user.getLevel());
     }
 }

@@ -14,6 +14,8 @@ import dagger.android.support.AndroidSupportInjection;
 import com.uni3000.uni3000.controller.UserController;
 import javax.inject.Inject;
 import com.uni3000.uni3000.viewmodel.UserViewModel;
+import com.uni3000.uni3000.di.DaggerControllerCreator;
+import com.uni3000.uni3000.di.ControllerCreator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +27,6 @@ import com.uni3000.uni3000.viewmodel.UserViewModel;
  */
 public class UserHeaderFragment extends Fragment {
 
-    @Inject
     UserController userController;
 
     UserViewModel user;
@@ -46,6 +47,8 @@ public class UserHeaderFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ControllerCreator creator = DaggerControllerCreator.create();
+        userController = creator.provideUserController();
         user = userController.getCurrentUserInfo();
     }
 
