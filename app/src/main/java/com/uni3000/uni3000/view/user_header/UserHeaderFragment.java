@@ -56,6 +56,7 @@ public class UserHeaderFragment extends Fragment {
         userController = creator.provideUserController();
         user = userController.getCurrentUserInfo();
         vocabController = creator.provideVocabController();
+        String temp = vocabController.getWord();
     }
 
     @Override

@@ -10,4 +10,8 @@ public class VocabController {
     public VocabController(AppDatabase db) {
         this.db = db;
     }
+
+    public String getWord() {
+        return db.getWord();
+    }
 }

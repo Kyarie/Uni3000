@@ -4,12 +4,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import javax.inject.Inject;
-
-//import android.database.Cursor;
+import java.util.List;
+import android.database.Cursor;
 
 public class AppDatabase {
     private SQLiteOpenHelper dbHelper;
-    private SQLiteDatabase database;
+    private SQLiteDatabase db;
     //private static AppDatabase instance;
 
     // Private constructor to aboid object creation from outside classes.
@@ -34,16 +34,20 @@ public class AppDatabase {
     /**
      * Open the database connection.
      */
-    public void open() {
-        this.database = dbHelper.getWritableDatabase();
+    public void openWrite() {
+        this.db = dbHelper.getWritableDatabase();
+    }
+
+    public void openRead() {
+        this.db = dbHelper.getReadableDatabase();
     }
 
     /**
      * Close the database connection.
      */
-    public void close() {
-        if (database != null) {
-            this.database.close();
+    public void closeWrite() {
+        if (db != null) {
+            this.db.close();
         }
     }
 
@@ -63,4 +67,11 @@ public class AppDatabase {
         cursor.close();
         return list;
     }*/
+
+    public String getWord() {
+        this.openRead();
+        Cursor cursor = db.rawQuery("SELECT * FROM VOCAB_WORD", null);
+        if (cursor != null) cursor.moveToFirst();
+        return cursor.getString(0);
+    }
 }
