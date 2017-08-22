@@ -1,8 +1,13 @@
 package com.uni3000.uni3000.controller;
 
-/**
- * Created by dora-_000 on 2017-08-22.
- */
+import javax.inject.Inject;
+import com.uni3000.uni3000.data.AppDatabase;
 
 public class VocabController {
+    private AppDatabase db;
+
+    @Inject
+    public VocabController(AppDatabase db) {
+        this.db = db;
+    }
 }
