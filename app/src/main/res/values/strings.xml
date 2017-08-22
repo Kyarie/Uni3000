@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Uni3000</string>
-
-    <!-- Labels -->
-    <string name="user_header_name">User:</string>
-    <string name="user_header_level">Level:</string>
-</resources>
