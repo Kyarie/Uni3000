@@ -4,4 +4,8 @@
     <!-- Labels -->
     <string name="user_header_name">User:</string>
     <string name="user_header_level">Level:</string>
+    <string name="university_size">Size</string> <!-- size e.g. crappy house -> college -> university -->
+    <string name="university_name">Uni Name </string>
+    <string name="money">Money: </string>
+    <string name="ranking">Ranking: </string>
 </resources>
