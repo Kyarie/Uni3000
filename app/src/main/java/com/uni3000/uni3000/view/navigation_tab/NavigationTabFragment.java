@@ -1,14 +1,18 @@
 package com.uni3000.uni3000.view.navigation_tab;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.uni3000.uni3000.R;
+import com.uni3000.uni3000.view.home.HomeActivity;
+import com.uni3000.uni3000.view.university.UniversityActivity;
 
 import dagger.android.support.AndroidSupportInjection;
 
@@ -46,6 +50,23 @@ public class NavigationTabFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_navigation_tab, container, false);
     }
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Button universityTab = (Button)getView().findViewById(R.id.universityTab);
+        universityTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), UniversityActivity.class);
+                ((HomeActivity) getActivity()).startActivity(intent);
+            }
+        });
+
+        Button libraryTab = (Button)getView().findViewById(R.id.libraryTab);
+        Button barTab = (Button)getView().findViewById(R.id.barTab);
+        Button buildTab = (Button)getView().findViewById(R.id.buildTab);
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
