@@ -11,6 +11,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 import com.uni3000.uni3000.R;
+import com.uni3000.uni3000.view.navigation_tab.NavigationTabFragment;
 import com.uni3000.uni3000.view.user_header.UserHeaderFragment;
 
 public class HomeActivity extends AppCompatActivity implements HasSupportFragmentInjector {
@@ -28,6 +29,7 @@ public class HomeActivity extends AppCompatActivity implements HasSupportFragmen
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.container, UserHeaderFragment.newInstance())
+                    .add(R.id.container, NavigationTabFragment.newInstance())
                     .commitAllowingStateLoss();
     }
 

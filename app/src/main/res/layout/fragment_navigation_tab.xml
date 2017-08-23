@@ -1,72 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="horizontal"
-    >
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.uni3000.uni3000.view.user_header.UserHeaderFragment">
+
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+            >
+
+            <Button
+                android:id="@+id/universityTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/university_size"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+            >
+
+            <Button
+                android:id="@+id/libraryTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Library"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:orientation="horizontal"
         android:layout_weight="1"
-        android:layout_gravity="bottom"
+            android:layout_gravity="bottom"
         >
 
-        <Button
-            android:id="@+id/universityTab"
-            android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/barTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bar"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_height="wrap_content"
-            android:text="@string/university_size"
-            android:textSize="12sp" />
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+            >
+
+            <Button
+                android:id="@+id/buildTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Build"
+                android:textSize="12sp" />
+        </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_gravity="bottom"
-        >
-
-        <Button
-            android:id="@+id/libraryTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Library"
-            android:textSize="12sp" />
-    </LinearLayout>
-
-    <LinearLayout
-    android:layout_height="wrap_content"
-    android:layout_width="0dp"
-    android:orientation="horizontal"
-    android:layout_weight="1"
-        android:layout_gravity="bottom"
-    >
-
-        <Button
-            android:id="@+id/barTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bar"
-            android:textSize="12sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:layout_gravity="bottom"
-        >
-
-        <Button
-            android:id="@+id/buildTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Build"
-            android:textSize="12sp" />
-    </LinearLayout>
-
-</LinearLayout>
+</FrameLayout>
