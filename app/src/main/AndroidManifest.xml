@@ -19,7 +19,8 @@
         </activity>
         <activity
             android:name=".view.university.UniversityActivity"
-            android:label="@string/title_activity_university"/>
+            android:label="@string/title_activity_university" />
+        <activity android:name=".view.library.LibraryActivity"></activity>
     </application>
 
 </manifest>

@@ -24,7 +24,7 @@ public class UniversityActivity extends AppCompatActivity implements HasSupportF
     protected void onCreate(Bundle savedInstanceState) {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.popup_university);
+        setContentView(R.layout.activity_university);
 
         if (savedInstanceState == null)
             getSupportFragmentManager()

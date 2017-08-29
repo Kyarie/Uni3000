@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.uni3000.uni3000.R;
 import com.uni3000.uni3000.view.home.HomeActivity;
+import com.uni3000.uni3000.view.library.LibraryActivity;
 import com.uni3000.uni3000.view.university.UniversityActivity;
 
 import dagger.android.support.AndroidSupportInjection;
@@ -53,16 +54,25 @@ public class NavigationTabFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         Button universityTab = (Button)getView().findViewById(R.id.universityTab);
         universityTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), UniversityActivity.class);
-                ((HomeActivity) getActivity()).startActivity(intent);
+                startActivity(intent);
             }
         });
 
         Button libraryTab = (Button)getView().findViewById(R.id.libraryTab);
+        libraryTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), LibraryActivity.class);
+                startActivity(intent);
+            }
+        });
+
         Button barTab = (Button)getView().findViewById(R.id.barTab);
         Button buildTab = (Button)getView().findViewById(R.id.buildTab);
     }

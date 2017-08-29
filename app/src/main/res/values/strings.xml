@@ -9,6 +9,17 @@
     <string name="money">Money: </string>
     <string name="ranking">Ranking: </string>
 
+    <!-- Buttons -->
+    <string name="university_questButton">Quests</string>
+    <string name="university_contractButton">Quick\nContract</string>
+    <string name="university_fundingButton">Funding</string>
+    <string name="university_recruitButton">Recruit</string>
+
+    <string name="library_chatButton">Chat with\nBrat</string>
+    <string name="library_learnButton">Learn</string>
+    <string name="library_reviewButton">Review</string>
+    <string name="library_viewallButton">View All</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_university">UniversityActivity</string>
