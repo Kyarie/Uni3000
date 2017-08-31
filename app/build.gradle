@@ -39,7 +39,13 @@ dependencies {
     compile 'com.google.dagger:dagger-android-support:2.11'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.android.support:design:26.+'
+    compile 'com.android.support:support-vector-drawable:26.+'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
+}
+android {
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
 }

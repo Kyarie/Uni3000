@@ -2,12 +2,20 @@ package com.uni3000.uni3000.di;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
+
+import com.uni3000.uni3000.view.bar.BarActivity;
+import com.uni3000.uni3000.view.bar.BarModule;
+import com.uni3000.uni3000.view.build.BuildActivity;
+import com.uni3000.uni3000.view.build.BuildModule;
 import com.uni3000.uni3000.view.home.HomeActivity;
 import com.uni3000.uni3000.view.home.HomeModule;
 import com.uni3000.uni3000.view.home.FragmentProvider;
 import com.uni3000.uni3000.view.library.LibraryActivity;
+import com.uni3000.uni3000.view.library.LibraryModule;
 import com.uni3000.uni3000.view.university.UniversityActivity;
 import com.uni3000.uni3000.view.university.UniversityModule;
+import com.uni3000.uni3000.view.university.recruit.RecruitActivity;
+import com.uni3000.uni3000.view.university.recruit.RecruitModule;
 
 @Module
 public abstract class ActivityBuilder {
@@ -16,7 +24,14 @@ public abstract class ActivityBuilder {
     abstract HomeActivity bindHomeActivity();
     @ContributesAndroidInjector(modules = {UniversityModule.class, com.uni3000.uni3000.view.university.FragmentProvider.class})
     abstract UniversityActivity bindUniversityActivity();
-    @ContributesAndroidInjector(modules = {UniversityModule.class, com.uni3000.uni3000.view.library.FragmentProvider.class})
+    @ContributesAndroidInjector(modules = {LibraryModule.class, com.uni3000.uni3000.view.library.FragmentProvider.class})
     abstract LibraryActivity bindLibraryActivity();
+    @ContributesAndroidInjector(modules = {BarModule.class, com.uni3000.uni3000.view.bar.FragmentProvider.class})
+    abstract BarActivity bindBarActivity();
+    @ContributesAndroidInjector(modules = {BuildModule.class, com.uni3000.uni3000.view.build.FragmentProvider.class})
+    abstract BuildActivity bindBuildActivity();
+
+    @ContributesAndroidInjector(modules = {RecruitModule.class, com.uni3000.uni3000.view.university.recruit.FragmentProvider.class})
+    abstract RecruitActivity bindRecruitActivity();
 
 }

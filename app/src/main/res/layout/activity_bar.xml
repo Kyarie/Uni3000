@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.uni3000.uni3000.view.university.UniversityActivity">
+
+    <ImageView
+        android:id="@+id/bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:id="@+id/linearLayout">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            >
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="100dp">
+
+            </Space>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            >
+
+            <Button
+                android:id="@+id/chat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bar_chatButton1"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            >
+
+            <Button
+                android:id="@+id/chat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bar_chatButton2"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            >
+
+            <Button
+                android:id="@+id/chat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bar_chatButton3"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            >
+
+            <Button
+                android:id="@+id/chat4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bar_chatButton4"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            >
+
+            <Button
+                android:id="@+id/chat5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bar_chatButton5"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            >
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="100dp">
+
+            </Space>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+</RelativeLayout>

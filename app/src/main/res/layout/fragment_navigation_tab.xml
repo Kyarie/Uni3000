@@ -38,7 +38,7 @@
                 android:id="@+id/libraryTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Library"
+                android:text="@string/libraryTab"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -54,7 +54,7 @@
                 android:id="@+id/barTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bar"
+                android:text="@string/barTab"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -70,7 +70,7 @@
                 android:id="@+id/buildTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Build"
+                android:text="@string/buildTab"
                 android:textSize="12sp" />
         </LinearLayout>
 

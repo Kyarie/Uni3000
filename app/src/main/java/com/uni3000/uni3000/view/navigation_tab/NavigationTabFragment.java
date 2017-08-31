@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.uni3000.uni3000.R;
+import com.uni3000.uni3000.view.bar.BarActivity;
+import com.uni3000.uni3000.view.build.BuildActivity;
 import com.uni3000.uni3000.view.home.HomeActivity;
 import com.uni3000.uni3000.view.library.LibraryActivity;
 import com.uni3000.uni3000.view.university.UniversityActivity;
@@ -74,7 +76,21 @@ public class NavigationTabFragment extends Fragment {
         });
 
         Button barTab = (Button)getView().findViewById(R.id.barTab);
+        barTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), BarActivity.class);
+                startActivity(intent);
+            }
+        });
         Button buildTab = (Button)getView().findViewById(R.id.buildTab);
+        buildTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), BuildActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

@@ -4,7 +4,12 @@
     <!-- Labels -->
     <string name="user_header_name">User:</string>
     <string name="user_header_level">Level:</string>
+
     <string name="university_size">Size</string> <!-- size e.g. crappy house -> college -> university -->
+    <string name="libraryTab">Library</string>
+    <string name="barTab">Bar</string>
+    <string name="buildTab">Build</string>
+
     <string name="university_name">Uni Name </string>
     <string name="money">Money: </string>
     <string name="ranking">Ranking: </string>
@@ -14,13 +19,39 @@
     <string name="university_contractButton">Quick\nContract</string>
     <string name="university_fundingButton">Funding</string>
     <string name="university_recruitButton">Recruit</string>
+        <string name="recruitButton1">Lecturer</string>
+            <string name="build_recruitHint1">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+        <string name="recruitButton2">Assistant Prof.</string>
+            <string name="build_recruitHint2">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+        <string name="recruitButton3">Associate Prof.</string>
+            <string name="build_recruitHint3">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+        <string name="recruitButton4">Tenure Prof.</string>
+            <string name="build_recruitHint4">Cost: $\nProfit: +$/day\nStudent Population: +</string>
 
     <string name="library_chatButton">Chat with\nBrat</string>
     <string name="library_learnButton">Learn</string>
     <string name="library_reviewButton">Review</string>
     <string name="library_viewallButton">View All</string>
 
+    <string name="bar_chatButton1">Chat with\nBartender</string>
+    <string name="bar_chatButton2">Chat with \n Mary</string>
+    <string name="bar_chatButton3">Chat with \n Alex</string>
+    <string name="bar_chatButton4">Chat with \n Bob</string>
+    <string name="bar_chatButton5">Chat with \n Kunning</string>
+
+
+    <string name="build_dormitoryButton">Dormitory</string>
+        <string name="build_dormitoryHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="build_recreationalButton">Recreational</string>
+        <string name="build_recreationalHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="build_educationalButton">Educational</string>
+        <string name="build_educationalHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="build_landmarkButton">Landmark</string>
+        <string name="build_landmarkHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_university">UniversityActivity</string>
+    <string name="title_activity_settings">Settings</string>
+
 </resources>
