@@ -14,19 +14,28 @@
     <string name="money">Money: </string>
     <string name="ranking">Ranking: </string>
 
+    <string name="personName">Kunning</string>
+    <string name="question">What is the right word?</string>
+    <string name="definition">v. cease to support or look after (someone); desert</string>
+    <string name="option1">abandon</string>
+    <string name="option2">pig</string>
+    <string name="option3">cow</string>
+    <string name="option4">cat</string>
+    <string name="option5">dog</string>
+
     <!-- Buttons -->
     <string name="university_questButton">Quests</string>
     <string name="university_contractButton">Quick\nContract</string>
     <string name="university_fundingButton">Funding</string>
     <string name="university_recruitButton">Recruit</string>
-        <string name="recruitButton1">Lecturer</string>
-            <string name="build_recruitHint1">Cost: $\nProfit: +$/day\nStudent Population: +</string>
-        <string name="recruitButton2">Assistant Prof.</string>
-            <string name="build_recruitHint2">Cost: $\nProfit: +$/day\nStudent Population: +</string>
-        <string name="recruitButton3">Associate Prof.</string>
-            <string name="build_recruitHint3">Cost: $\nProfit: +$/day\nStudent Population: +</string>
-        <string name="recruitButton4">Tenure Prof.</string>
-            <string name="build_recruitHint4">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="recruitButton1">Lecturer</string>
+    <string name="build_recruitHint1">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="recruitButton2">Assistant Prof.</string>
+    <string name="build_recruitHint2">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="recruitButton3">Associate Prof.</string>
+    <string name="build_recruitHint3">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="recruitButton4">Tenure Prof.</string>
+    <string name="build_recruitHint4">Cost: $\nProfit: +$/day\nStudent Population: +</string>
 
     <string name="library_chatButton">Chat with\nBrat</string>
     <string name="library_learnButton">Learn</string>
@@ -41,13 +50,16 @@
 
 
     <string name="build_dormitoryButton">Dormitory</string>
-        <string name="build_dormitoryHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="build_dormitoryHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
     <string name="build_recreationalButton">Recreational</string>
-        <string name="build_recreationalHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="build_recreationalHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
     <string name="build_educationalButton">Educational</string>
-        <string name="build_educationalHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="build_educationalHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
     <string name="build_landmarkButton">Landmark</string>
-        <string name="build_landmarkHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+    <string name="build_landmarkHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
+
+    <!-- multiple choice -->
+    <array name="mc_array">abandon abash</array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

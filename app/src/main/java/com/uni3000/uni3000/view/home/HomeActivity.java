@@ -1,10 +1,10 @@
 package com.uni3000.uni3000.view.home;
 
+import android.app.DialogFragment;
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.Window;
-import android.view.WindowManager;
 
 import javax.inject.Inject;
 
@@ -37,6 +37,7 @@ public class HomeActivity extends AppCompatActivity implements HasSupportFragmen
                     .add(R.id.container, NavigationTabFragment.newInstance())
                     .commitAllowingStateLoss();
     }
+
 
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {

@@ -13,7 +13,6 @@ import android.widget.Button;
 import com.uni3000.uni3000.R;
 import com.uni3000.uni3000.view.bar.BarActivity;
 import com.uni3000.uni3000.view.build.BuildActivity;
-import com.uni3000.uni3000.view.home.HomeActivity;
 import com.uni3000.uni3000.view.library.LibraryActivity;
 import com.uni3000.uni3000.view.university.UniversityActivity;
 
@@ -122,8 +121,8 @@ public class NavigationTabFragment extends Fragment {
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
+     * to the TestActivity and potentially other fragments contained in that
+     * TestActivity.
      * <p>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
