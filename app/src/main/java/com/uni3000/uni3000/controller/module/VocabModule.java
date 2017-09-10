@@ -5,8 +5,8 @@ import android.content.Context;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
-import com.uni3000.uni3000.data.AppDatabase;
-import com.uni3000.uni3000.data.DatabaseOpenHelper;
+import com.uni3000.uni3000.data.DatabaseManager;
+import com.uni3000.uni3000.data.DatabaseHelper;
 
 @Module
 public class VocabModule {
@@ -23,12 +23,12 @@ public class VocabModule {
     }
 
     @Provides @Singleton
-    DatabaseOpenHelper provideUser(Context context){
-        return new DatabaseOpenHelper(context);
+    DatabaseHelper provideUser(Context context){
+        return new DatabaseHelper(context);
     }
 
     @Provides @Singleton
-    AppDatabase provideAppDatabase(DatabaseOpenHelper dbHelper){
-        return new AppDatabase(dbHelper);
+    DatabaseManager provideAppDatabase(DatabaseHelper dbHelper){
+        return new DatabaseManager(dbHelper);
     }
 }
