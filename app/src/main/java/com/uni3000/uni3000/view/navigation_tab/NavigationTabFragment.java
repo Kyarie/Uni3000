@@ -14,7 +14,7 @@ import com.uni3000.uni3000.R;
 import com.uni3000.uni3000.view.bar.BarActivity;
 import com.uni3000.uni3000.view.build.BuildActivity;
 import com.uni3000.uni3000.view.library.LibraryActivity;
-import com.uni3000.uni3000.view.university.UniversityActivity;
+import com.uni3000.uni3000.view.map.MapActivity;
 
 import dagger.android.support.AndroidSupportInjection;
 
@@ -56,11 +56,12 @@ public class NavigationTabFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         Button universityTab = (Button)getView().findViewById(R.id.universityTab);
         universityTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), UniversityActivity.class);
+                Intent intent = new Intent(getActivity(), MapActivity.class);
                 startActivity(intent);
             }
         });
@@ -90,7 +91,9 @@ public class NavigationTabFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
     }
+
 
 
     // TODO: Rename method, update argument and hook method into UI event

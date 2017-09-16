@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uni3000.uni3000.view.university.UniversityActivity">
+    tools:context="com.uni3000.uni3000.view.map.university.UniversityActivity">
 
     <ImageView
         android:id="@+id/bar"
@@ -48,7 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bar_chatButton1"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:onClick="ButtonOnClick"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -63,7 +64,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bar_chatButton2"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:onClick="ButtonOnClick"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -78,7 +80,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bar_chatButton3"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:onClick="ButtonOnClick"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -93,7 +96,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bar_chatButton4"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:onClick="ButtonOnClick"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -108,7 +112,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bar_chatButton5"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:onClick="ButtonOnClick"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"

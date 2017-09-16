@@ -1,5 +1,7 @@
-package com.uni3000.uni3000.view.university.recruit;
+package com.uni3000.uni3000.view.map.location;
 
+import com.uni3000.uni3000.view.dialog.multiple_choice.McFragment;
+import com.uni3000.uni3000.view.dialog.multiple_choice.McModule;
 import com.uni3000.uni3000.view.navigation_tab.NavigationTabFragment;
 import com.uni3000.uni3000.view.navigation_tab.NavigationTabModule;
 import com.uni3000.uni3000.view.user_header.UserHeaderFragment;
@@ -16,4 +18,5 @@ public abstract class FragmentProvider {
 
     @ContributesAndroidInjector(modules = NavigationTabModule.class)
     abstract NavigationTabFragment provideNavigationTabFragmentFactory();
+
 }

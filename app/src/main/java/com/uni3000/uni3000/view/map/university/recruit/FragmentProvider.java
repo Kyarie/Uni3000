@@ -1,4 +1,4 @@
-package com.uni3000.uni3000.view.university;
+package com.uni3000.uni3000.view.map.university.recruit;
 
 import com.uni3000.uni3000.view.navigation_tab.NavigationTabFragment;
 import com.uni3000.uni3000.view.navigation_tab.NavigationTabModule;

@@ -24,6 +24,7 @@
     <string name="option5">dog</string>
 
     <!-- Buttons -->
+    <string name="map_officeButton">Office</string>
     <string name="university_questButton">Quests</string>
     <string name="university_contractButton">Quick\nContract</string>
     <string name="university_fundingButton">Funding</string>

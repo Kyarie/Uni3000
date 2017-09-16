@@ -1,4 +1,4 @@
-package com.uni3000.uni3000.view.university.recruit;
+package com.uni3000.uni3000.view.map.university.recruit;
 
 import dagger.Module;
 

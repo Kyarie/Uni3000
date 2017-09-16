@@ -1,4 +1,4 @@
-package com.uni3000.uni3000.view.dialog;
+package com.uni3000.uni3000.view.dialog.quest;
 
 import android.content.Context;
 import android.net.Uri;
@@ -14,15 +14,15 @@ import com.uni3000.uni3000.R;
 
 import dagger.android.support.AndroidSupportInjection;
 
-public class McFragment extends android.support.v4.app.DialogFragment {
-    private McFragment.OnFragmentInteractionListener mListener;
+public class QuestFragment extends android.support.v4.app.DialogFragment {
+    private QuestFragment.OnFragmentInteractionListener mListener;
 
-    public McFragment() {
+    public QuestFragment() {
         // Required empty public constructor
     }
 
-    public static McFragment newInstance() {
-        McFragment fragment = new McFragment();
+    public static QuestFragment newInstance() {
+        QuestFragment fragment = new QuestFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -35,7 +35,7 @@ public class McFragment extends android.support.v4.app.DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mc, container, false);
+        return inflater.inflate(R.layout.fragment_quest, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -1,6 +1,5 @@
-package com.uni3000.uni3000.view.university;
+package com.uni3000.uni3000.view.map.university;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,11 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.uni3000.uni3000.R;
-import com.uni3000.uni3000.view.bar.BarActivity;
-import com.uni3000.uni3000.view.build.BuildActivity;
-import com.uni3000.uni3000.view.library.LibraryActivity;
+import com.uni3000.uni3000.view.map.MapActivity;
+import com.uni3000.uni3000.view.map.university.recruit.RecruitActivity;
 import com.uni3000.uni3000.view.navigation_tab.NavigationTabFragment;
-import com.uni3000.uni3000.view.university.recruit.RecruitActivity;
 import com.uni3000.uni3000.view.user_header.UserHeaderFragment;
 
 import javax.inject.Inject;
@@ -40,15 +37,15 @@ public class UniversityActivity extends AppCompatActivity implements HasSupportF
                     .add(R.id.container, UserHeaderFragment.newInstance())
                     .add(R.id.container, NavigationTabFragment.newInstance())
                     .commitAllowingStateLoss();
+    }
 
-        final Button recruitButton = (Button) findViewById(R.id.recruitButton);
-        recruitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UniversityActivity.this, RecruitActivity.class);
+    public void ButtonOnClick(View v) {
+        switch (v.getId()) {
+            case R.id.recruitButton:
+                Intent intent = new Intent(UniversityActivity.this,RecruitActivity.class);
                 startActivity(intent);
-            }
-        });
+                break;
+        }
     }
 
     @Override

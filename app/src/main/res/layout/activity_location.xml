@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.uni3000.uni3000.view.map.university.UniversityActivity">
 
-    <ImageView
-        android:id="@+id/library"
+    <TextView
+        android:id="@+id/variable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/library"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true" />
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -44,60 +42,13 @@
             >
 
             <Button
-                android:id="@+id/chatButton"
+                android:id="@+id/actionButton"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/library_chatButton"
-                android:textSize="12sp"
-                android:onClick="ButtonOnClick"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_gravity="end"
-            >
-
-            <Button
-                android:id="@+id/learnButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/library_learnButton"
-                android:textSize="12sp"
-                android:onClick="ButtonOnClick"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_gravity="end"
-            >
-
-            <Button
-                android:id="@+id/reviewButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/library_reviewButton"
-                android:textSize="12sp"
-                android:onClick="ButtonOnClick"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_gravity="end"
-            >
-
-            <Button
-                android:id="@+id/viewallButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/library_viewallButton"
-                android:textSize="12sp"
-                android:onClick="ButtonOnClick"/>
+                android:onClick="ButtonOnClick"
+                android:text="!!!"
+                android:textSize="12sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
