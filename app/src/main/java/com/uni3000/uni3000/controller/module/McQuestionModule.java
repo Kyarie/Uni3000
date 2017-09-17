@@ -7,13 +7,15 @@ import dagger.Provides;
 import javax.inject.Singleton;
 import com.uni3000.uni3000.data.DatabaseManager;
 import com.uni3000.uni3000.data.DatabaseHelper;
+import com.uni3000.uni3000.model.Interface.IMcQuestion;
+import com.uni3000.uni3000.model.McQuestion;
 
 @Module
-public class VocabModule {
+public class McQuestionModule {
 
     private final Context context;
 
-    public VocabModule (Context context) {
+    public McQuestionModule(Context context) {
         this.context = context;
     }
 
@@ -30,5 +32,10 @@ public class VocabModule {
     @Provides @Singleton
     DatabaseManager provideAppDatabase(DatabaseHelper dbHelper){
         return new DatabaseManager(dbHelper);
+    }
+
+    @Provides
+    IMcQuestion provideIMcQuestion(DatabaseHelper dbHelper){
+        return new McQuestion(dbHelper);
     }
 }

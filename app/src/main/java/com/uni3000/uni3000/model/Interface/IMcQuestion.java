@@ -1,12 +1,12 @@
 package com.uni3000.uni3000.model.Interface;
 
-import com.uni3000.uni3000.model.Vocab_Word;
+import com.uni3000.uni3000.model.Vocab;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface IMcQuestion {
     public void initQuestion();
-    public Vocab_Word getAnswer();
+    public Vocab getAnswer();
     public String getQuestion();
-    public ArrayList<Vocab_Word> getOptions();
+    public List<Vocab> getOptions();
 }

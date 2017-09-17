@@ -1,35 +1,74 @@
 package com.uni3000.uni3000.model;
 
-import com.uni3000.uni3000.data.DatabaseManager;
+import com.uni3000.uni3000.data.DatabaseHelper;
 import com.uni3000.uni3000.model.Interface.IMcQuestion;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class McQuestion implements IMcQuestion{
-    Vocab_Word answer;
-    ArrayList<Vocab_Word> options;
-    private DatabaseManager db;
+    Vocab answer;
+    List<Vocab> options;
+    List<Vocab> usedVocab;
+    static final int OPTIONS_COUNT = 4;
+    int round;
+    private DatabaseHelper db;
 
-    McQuestion(DatabaseManager db) {
+    public McQuestion(DatabaseHelper db) {
         this.db = db;
+        answer = null;
+        options = new ArrayList<Vocab>();
+        usedVocab = new ArrayList<Vocab>();
+        round = 1;
     }
 
-    public Vocab_Word getAnswer() {
+    public void initQuestion() {
+        this.answer = this.generateAnswer();
+        usedVocab.add(this.answer);
+        this.options = this.generateOptions();
+    }
+
+    public Vocab getAnswer() {
         return answer;
     }
 
     public String getQuestion() {
-        return answer.word;
+        return answer.getVocabWord().getWord();
     }
 
-    public ArrayList<Vocab_Word> getOptions() {
+    public List<Vocab> getOptions() {
         return options;
     }
 
-    public void initQuestion() {
-        /*db.openRead();
-        Cursor cursor = db.rawQuery("SELECT VC.VOCAB_ID, VW.WORD, VW.STATUS, VD.DEFINITION, VD.PARTS_OF_SPEECH, VD.EXAMPLE FROM VOCAB_WORD VW, VOCAB VC, VOCAB_DEFINITION VD WHERE VW.VOCAB_WORD_ID = VC.VOCAB_WORD_ID AND VC.VOCAB_DEFINITION_ID = VD.VOCAB_DEFINITION_ID ORDER BY RANDOM() LIMIT 5", null);
-        cursor.moveToFirst();*/
+    // Helper functions
+    private Vocab generateAnswer() {
+        List<Vocab> vocab = this.getRandomVocab(1);
+        // TODO: Exception or assert???
+        return vocab.get(0);
     }
 
+    private List<Vocab> generateOptions() {
+        List<Vocab> vocab = this.getRandomVocab(OPTIONS_COUNT);
+        return vocab;
+    }
+
+    private List<Vocab> getRandomVocab(int number) {
+        List<Vocab> vocabList = null;
+        String query = "SELECT * FROM VOCAB";
+        if (this.usedVocab.size() > 0) {
+            query += " WHERE VOCAB.VOCAB_ID <> " + this.usedVocab.get(0).getVocabId();
+        }
+        for (int i = 1; i < this.usedVocab.size(); i++){
+            query += " AND VOCAB.VOCAB_ID <> " + this.usedVocab.get(i).getVocabId();
+        }
+        query += " ORDER BY RANDOM() LIMIT " + Integer.toString(number);
+        try {
+            vocabList = db.getVocabDao().queryRaw(query, db.getVocabDao().getRawRowMapper()).getResults();
+            //vocabList = db.getVocabDao().queryBuilder().where().raw("VOCAB_ID >= (ABS(RANDOM()) % MAX(VOCAB_ID) + 1)").query();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return vocabList;
+    }
 }

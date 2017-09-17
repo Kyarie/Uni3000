@@ -12,10 +12,9 @@ import android.widget.TextView;
 import com.uni3000.uni3000.R;
 import dagger.android.support.AndroidSupportInjection;
 import com.uni3000.uni3000.controller.UserController;
-import com.uni3000.uni3000.controller.VocabController;
-import javax.inject.Inject;
+import com.uni3000.uni3000.controller.McQuestionController;
 
-import com.uni3000.uni3000.controller.module.VocabModule;
+import com.uni3000.uni3000.controller.module.McQuestionModule;
 import com.uni3000.uni3000.viewmodel.UserViewModel;
 import com.uni3000.uni3000.di.DaggerControllerCreator;
 import com.uni3000.uni3000.di.ControllerCreator;
@@ -34,7 +33,7 @@ public class UserHeaderFragment extends Fragment {
 
     UserViewModel user;
 
-    VocabController vocabController;
+    McQuestionController vocabController;
 
     private OnFragmentInteractionListener mListener;
 
@@ -52,10 +51,10 @@ public class UserHeaderFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ControllerCreator creator = DaggerControllerCreator.builder().vocabModule(new VocabModule(this.getContext())).build();
+        ControllerCreator creator = DaggerControllerCreator.builder().mcQuestionModule(new McQuestionModule(this.getContext())).build();
         userController = creator.provideUserController();
         user = userController.getCurrentUserInfo();
-        vocabController = creator.provideVocabController();
+        vocabController = creator.provideMcQuestionController();
         String temp = vocabController.getWord();
     }
 

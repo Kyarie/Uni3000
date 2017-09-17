@@ -12,20 +12,20 @@ import com.j256.ormlite.table.DatabaseTable;
 public class Vocab_Word {
 
     @DatabaseField(columnName = "VOCAB_WORD_ID", generatedId=true)
-    private int vocabId;
+    private int vocabWordId;
 
     @DatabaseField(columnName = "WORD")
-    public String word;
+    private String word;
 
     @DatabaseField(columnName = "STATUS")
-    public char status;
+    private char status;
 
-    public void setVocabId(int vocabId) {
-        this.vocabId = vocabId;
+    public void setVocabId(int vocabWordId) {
+        this.vocabWordId = vocabWordId;
     }
 
     public int getVocabId() {
-        return vocabId;
+        return vocabWordId;
     }
 
     public void setWord(String word) {

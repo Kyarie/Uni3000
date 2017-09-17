@@ -17,6 +17,8 @@ import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.uni3000.uni3000.model.Vocab_Word;
+import com.uni3000.uni3000.model.Vocab_Definition;
+import com.uni3000.uni3000.model.Vocab;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     // name of the database file for your application -- change to something appropriate for your app
@@ -28,6 +30,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     // the DAO object we use to access the SimpleData table
     private Dao<Vocab_Word, String> vocabWordDao = null;
+    private Dao<Vocab_Definition, String> vocabWordDefinitionDao = null;
+    private Dao<Vocab, String> vocabDao = null;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -94,5 +98,27 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             }
         }
         return vocabWordDao;
+    }
+
+    public Dao<Vocab_Definition, String> getVocabDefinitionDao() {
+        if (null == vocabWordDefinitionDao) {
+            try {
+                vocabWordDefinitionDao = getDao(Vocab_Definition.class);
+            }catch (java.sql.SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return vocabWordDefinitionDao;
+    }
+
+    public Dao<Vocab, String> getVocabDao() {
+        if (null == vocabDao) {
+            try {
+                vocabDao = getDao(Vocab.class);
+            }catch (java.sql.SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return vocabDao;
     }
 }
