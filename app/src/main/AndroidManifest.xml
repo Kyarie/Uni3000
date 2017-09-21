@@ -25,7 +25,8 @@
         <activity android:name=".view.build.BuildActivity" />
         <activity android:name=".view.map.university.recruit.RecruitActivity" />
         <activity android:name=".view.map.MapActivity" />
-        <activity android:name=".view.map.location.LocationActivity"></activity>
+        <activity android:name=".view.map.location.LocationActivity" />
+        <activity android:name=".view.game_play.QuestionActivity"></activity>
     </application>
 
 </manifest>

@@ -54,8 +54,6 @@ public class UserHeaderFragment extends Fragment {
         ControllerCreator creator = DaggerControllerCreator.builder().mcQuestionModule(new McQuestionModule(this.getContext())).build();
         userController = creator.provideUserController();
         user = userController.getCurrentUserInfo();
-        vocabController = creator.provideMcQuestionController();
-        String temp = vocabController.getWord();
     }
 
     @Override

@@ -20,6 +20,9 @@ import com.uni3000.uni3000.view.map.university.UniversityActivity;
 import com.uni3000.uni3000.view.map.university.UniversityModule;
 import com.uni3000.uni3000.view.map.university.recruit.RecruitActivity;
 import com.uni3000.uni3000.view.map.university.recruit.RecruitModule;
+import com.uni3000.uni3000.view.game_play.QuestionActivity;
+import com.uni3000.uni3000.view.game_play.module.QuestionModule;
+import com.uni3000.uni3000.view.game_play.GamePlayFragmentProvider;
 
 @Module
 public abstract class ActivityBuilder {
@@ -43,5 +46,8 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = {LocationModule.class, com.uni3000.uni3000.view.map.location.FragmentProvider.class})
     abstract LocationActivity bindLocationActivity();
+
+    @ContributesAndroidInjector(modules = {QuestionModule.class, GamePlayFragmentProvider.class})
+    abstract QuestionActivity bindQuestionActivity();
 
 }

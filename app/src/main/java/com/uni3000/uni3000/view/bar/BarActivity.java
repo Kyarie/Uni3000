@@ -1,5 +1,6 @@
 package com.uni3000.uni3000.view.bar;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.uni3000.uni3000.R;
-import com.uni3000.uni3000.view.dialog.multiple_choice.McFragment;
+import com.uni3000.uni3000.view.game_play.QuestionActivity;
+import com.uni3000.uni3000.view.game_play.OptionsFragment;
 import com.uni3000.uni3000.view.navigation_tab.NavigationTabFragment;
 import com.uni3000.uni3000.view.user_header.UserHeaderFragment;
 
@@ -34,7 +36,8 @@ public class BarActivity extends AppCompatActivity implements HasSupportFragment
         chat5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog();
+                Intent intent = new Intent(BarActivity.this, QuestionActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -46,14 +49,6 @@ public class BarActivity extends AppCompatActivity implements HasSupportFragment
                     .add(R.id.container, NavigationTabFragment.newInstance())
                     .commitAllowingStateLoss();
     }
-
-
-    private void showDialog(){
-        McFragment mcFragment = new McFragment();
-        mcFragment.setCancelable(false);
-        mcFragment.show(getSupportFragmentManager(),"dialog");
-    }
-
 
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {

@@ -1,4 +1,4 @@
-package com.uni3000.uni3000.view.dialog.quest;
+package com.uni3000.uni3000.view.game_play;
 
 import android.content.Context;
 import android.net.Uri;
