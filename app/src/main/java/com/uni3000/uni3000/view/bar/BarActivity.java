@@ -10,6 +10,9 @@ import android.widget.Button;
 import com.uni3000.uni3000.R;
 import com.uni3000.uni3000.view.game_play.QuestionActivity;
 import com.uni3000.uni3000.view.game_play.OptionsFragment;
+import com.uni3000.uni3000.view.map.MapActivity;
+import com.uni3000.uni3000.view.map.location.LocationActivity;
+import com.uni3000.uni3000.view.map.university.UniversityActivity;
 import com.uni3000.uni3000.view.navigation_tab.NavigationTabFragment;
 import com.uni3000.uni3000.view.user_header.UserHeaderFragment;
 
@@ -31,17 +34,6 @@ public class BarActivity extends AppCompatActivity implements HasSupportFragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bar);
 
-
-        Button chat5 = (Button)findViewById(R.id.chat5);
-        chat5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BarActivity.this, QuestionActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
         if (savedInstanceState == null)
             getSupportFragmentManager()
                     .beginTransaction()
@@ -50,6 +42,13 @@ public class BarActivity extends AppCompatActivity implements HasSupportFragment
                     .commitAllowingStateLoss();
     }
 
+    public void ButtonOnClick(View v) {
+        switch (v.getId()) {
+            case R.id.chat5:
+                startActivity(new Intent(BarActivity.this,QuestionActivity.class));
+                break;
+        }
+    }
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {
         return fragmentDispatchingAndroidInjector;

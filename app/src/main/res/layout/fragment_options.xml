@@ -15,23 +15,28 @@
         <RadioButton
             android:id="@+id/option1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:onClick="ButtonOnClick"/>
         <RadioButton
             android:id="@+id/option2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:onClick="ButtonOnClick"/>
         <RadioButton
             android:id="@+id/option3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:onClick="ButtonOnClick"/>
         <RadioButton
             android:id="@+id/option4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:onClick="ButtonOnClick"/>
         <RadioButton
             android:id="@+id/option5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:onClick="ButtonOnClick"/>
     </RadioGroup>
 
 

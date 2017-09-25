@@ -15,6 +15,8 @@ import com.uni3000.uni3000.view.bar.BarActivity;
 import com.uni3000.uni3000.view.build.BuildActivity;
 import com.uni3000.uni3000.view.library.LibraryActivity;
 import com.uni3000.uni3000.view.map.MapActivity;
+import com.uni3000.uni3000.view.map.location.LocationActivity;
+import com.uni3000.uni3000.view.map.university.UniversityActivity;
 
 import dagger.android.support.AndroidSupportInjection;
 
@@ -52,6 +54,7 @@ public class NavigationTabFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_navigation_tab, container, false);
     }
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -94,7 +97,22 @@ public class NavigationTabFragment extends Fragment {
 
     }
 
-
+    /*public void ButtonOnClick(View v) {
+        switch (v.getId()) {
+            case R.id.universityTab:
+                startActivity(new Intent(getActivity(),MapActivity.class));
+                break;
+            case R.id.libraryTab:
+                startActivity(new Intent(getActivity(),LibraryActivity.class));
+                break;
+            case R.id.barTab:
+                startActivity(new Intent(getActivity(),BarActivity.class));
+                break;
+            case R.id.buildTab:
+                startActivity(new Intent(getActivity(),BuildActivity.class));
+                break;
+        }
+    }*/
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
