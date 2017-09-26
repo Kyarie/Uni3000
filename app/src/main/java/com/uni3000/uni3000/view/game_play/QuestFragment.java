@@ -49,7 +49,7 @@ public class QuestFragment extends android.support.v4.app.DialogFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button buttonOK = (Button)getView().findViewById(R.id.buttonOK);
+        Button buttonOK = (Button)getView().findViewById(R.id.buttonOk);
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
