@@ -21,11 +21,12 @@ import dagger.android.support.AndroidSupportInjection;
 
 public class OptionsFragment extends Fragment implements OnClickListener {
     private OptionsFragment.OnQuestionInteractionListener mListener;
-    Button buttonOk;
-    Button buttonNext;
-    RadioButton correctButton;
-    RadioGroup optionsGroup;
-    List<RadioButton> options;
+    private Button buttonOk;
+    private Button buttonNext;
+    private RadioButton correctButton;
+    private RadioGroup optionsGroup;
+    private List<RadioButton> options;
+    private boolean finished = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +50,7 @@ public class OptionsFragment extends Fragment implements OnClickListener {
         options.add((RadioButton) getView().findViewById(R.id.option3));
         options.add((RadioButton) getView().findViewById(R.id.option4));
         options.add((RadioButton) getView().findViewById(R.id.option5));
+        mListener.showOptions();
     }
 
     @Override
@@ -71,6 +73,8 @@ public class OptionsFragment extends Fragment implements OnClickListener {
 
     public interface OnQuestionInteractionListener {
         public void showOptions();
+        public void updateScore(boolean correct);
+        public void showResults();
     }
 
     public void setupOptions(List<Vocab> vocabList, Vocab answer) {
@@ -90,16 +94,21 @@ public class OptionsFragment extends Fragment implements OnClickListener {
     public void onClick(final View v) {
         switch (v.getId()) {
             case R.id.buttonNext:
-                optionsGroup.clearCheck();
-                mListener.showOptions();
-                buttonNext.setVisibility(View.GONE);
-                this.controlRadioGroup(true);
+                if (finished) {
+                    mListener.showResults();
+                } else {
+                    optionsGroup.clearCheck();
+                    mListener.showOptions();
+                    buttonNext.setVisibility(View.GONE);
+                    this.controlRadioGroup(true);
+                }
                 break;
             case R.id.buttonOk:
                 buttonOk.setVisibility(View.GONE);
                 buttonNext.setVisibility(View.VISIBLE);
                 this.controlRadioGroup(false);
                 this.showCorrectAnswer();
+                mListener.updateScore(isCorrectAnswer());
                 break;
             case R.id.option1:
             case R.id.option2:
@@ -111,9 +120,17 @@ public class OptionsFragment extends Fragment implements OnClickListener {
         }
     }
 
+    public void isFinished() {
+        finished = true;
+    }
+
     // Helper functions
     private void showCorrectAnswer() {
         correctButton.setTextColor(Color.GREEN);
+    }
+
+    private boolean isCorrectAnswer() {
+        return correctButton.isChecked();
     }
 
     private void controlRadioGroup(boolean enabled) {

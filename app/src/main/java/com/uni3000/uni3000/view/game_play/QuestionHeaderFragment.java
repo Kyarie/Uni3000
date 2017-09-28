@@ -14,7 +14,6 @@ import com.uni3000.uni3000.R;
 import dagger.android.support.AndroidSupportInjection;
 
 public class QuestionHeaderFragment extends Fragment {
-    private OnHeaderInteractionListener mListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,26 +26,25 @@ public class QuestionHeaderFragment extends Fragment {
     public void onAttach(Context context) {
         AndroidSupportInjection.inject(this);
         super.onAttach(context);
-        if (context instanceof OnHeaderInteractionListener) {
-            mListener = (OnHeaderInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
+    /*
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
+    }*/
 
-    public interface OnHeaderInteractionListener {
-        public void updateScore();
-    }
-
-    public void setupQuestion(String question) {
+    public void setupQuestion(String question, String currentQuestion) {
         TextView questionText = (TextView) getView().findViewById(R.id.questionText);
         questionText.setText(question);
+        TextView questionCount = (TextView) getView().findViewById(R.id.questionCount);
+        questionCount.setText(currentQuestion);
     }
+
+    public void updateScore(int score) {
+        TextView scoreText = (TextView) getView().findViewById(R.id.scoreText);
+        scoreText.setText("Score: " + Integer.toString(score)); // TODO: make this less sketch
+    }
+
 }

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <fragment android:name="com.uni3000.uni3000.view.game_play.OptionsFragment"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/bottomOptions"
         android:layout_weight="1"
         android:layout_width="match_parent"

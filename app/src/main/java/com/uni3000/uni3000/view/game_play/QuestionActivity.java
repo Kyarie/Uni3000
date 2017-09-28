@@ -16,12 +16,18 @@ import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
+import android.support.v4.app.FragmentTransaction;
 
 public class QuestionActivity extends AppCompatActivity implements HasSupportFragmentInjector,
-        OptionsFragment.OnQuestionInteractionListener, QuestionHeaderFragment.OnHeaderInteractionListener {
+        OptionsFragment.OnQuestionInteractionListener {
 
     McQuestionController quesController;
+    OptionsFragment optionsFragment;
+    QuestionHeaderFragment headerFragment;
     int score;
+    int totalQuestionNumber;
+    int currentQuestionNumber;
+    int correctAnswerNumber;
 
     @Inject
     DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
@@ -31,10 +37,20 @@ public class QuestionActivity extends AppCompatActivity implements HasSupportFra
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        if (savedInstanceState != null) {
+            return;
+        }
+        optionsFragment = new OptionsFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.bottomOptions, optionsFragment).commit();
+
         ControllerCreator creator = DaggerControllerCreator.builder().mcQuestionModule(new McQuestionModule(this)).build();
         quesController = creator.provideMcQuestionController();
         score = 0;
-        this.showOptions();
+        totalQuestionNumber = 3; // TODO: get from quest database
+        currentQuestionNumber = 0;
+        correctAnswerNumber = 0;
+        headerFragment = (QuestionHeaderFragment) getSupportFragmentManager().findFragmentById(R.id.topView);
+        this.updateScore(false);
     }
 
     @Override
@@ -44,13 +60,35 @@ public class QuestionActivity extends AppCompatActivity implements HasSupportFra
 
     public void showOptions() {
         quesController.initQuestion();
-        OptionsFragment optionsFragment = (OptionsFragment) getSupportFragmentManager().findFragmentById(R.id.bottomOptions);
         optionsFragment.setupOptions(quesController.getOptions(), quesController.getAnswer());
-        QuestionHeaderFragment headerFragment = (QuestionHeaderFragment) getSupportFragmentManager().findFragmentById(R.id.topView);
-        headerFragment.setupQuestion(quesController.getAnswer().getVocabWord().getWord());
+        currentQuestionNumber++;
+        String currentQuestion = Integer.toString(currentQuestionNumber) + "/" + Integer.toString(totalQuestionNumber);
+        headerFragment.setupQuestion(quesController.getAnswer().getVocabWord().getWord(), currentQuestion);
     }
 
-    public void updateScore() {
-        score += 10;
+    public void updateScore(boolean correct) {
+        if (correct) {
+            score += 10;
+            correctAnswerNumber++;
+        }
+        headerFragment.updateScore(score);
+        if (isFinished()) {
+            optionsFragment.isFinished();
+        }
+    }
+
+    public void showResults() {
+        GameResultFragment gameResultFragment = new GameResultFragment();
+        Bundle result = new Bundle();
+        result.putInt("score", score);
+        result.putInt("correctNumber", correctAnswerNumber);
+        gameResultFragment.setArguments(result);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.bottomOptions, gameResultFragment);
+        transaction.commit();
+    }
+
+    public boolean isFinished() {
+        return currentQuestionNumber == totalQuestionNumber;
     }
 }

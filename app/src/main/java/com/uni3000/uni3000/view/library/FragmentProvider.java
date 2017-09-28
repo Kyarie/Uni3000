@@ -1,7 +1,7 @@
 package com.uni3000.uni3000.view.library;
 
 import com.uni3000.uni3000.view.game_play.OptionsFragment;
-import com.uni3000.uni3000.view.game_play.module.OptionsModule;
+import com.uni3000.uni3000.view.game_play.module.GamePlayFragmentModule;
 import com.uni3000.uni3000.view.navigation_tab.NavigationTabFragment;
 import com.uni3000.uni3000.view.navigation_tab.NavigationTabModule;
 import com.uni3000.uni3000.view.user_header.UserHeaderFragment;
@@ -19,6 +19,6 @@ public abstract class FragmentProvider {
     @ContributesAndroidInjector(modules = NavigationTabModule.class)
     abstract NavigationTabFragment provideNavigationTabFragmentFactory();
 
-    @ContributesAndroidInjector(modules = OptionsModule.class)
+    @ContributesAndroidInjector(modules = GamePlayFragmentModule.class)
     abstract OptionsFragment provideDialogFragmentFactory();
 }
