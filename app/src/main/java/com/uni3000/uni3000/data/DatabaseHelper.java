@@ -5,13 +5,9 @@ import java.util.List;
 
 import android.content.Context;
 import android.database.SQLException;
+import java.io.IOException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import java.io.File;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
@@ -21,45 +17,32 @@ import com.uni3000.uni3000.model.Vocab_Definition;
 import com.uni3000.uni3000.model.Vocab;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
-    // name of the database file for your application -- change to something appropriate for your app
     private static final String DATABASE_NAME = "uni3000_db.sqlite";
-
-    // any time you make changes to your database objects, you may have to increase the database version
-    private static final int DATABASE_VERSION = 2;
-    private static final String DATABASE_PATH = "/data/data/com.uni3000.uni3000/databases/";
+    private static final int DATABASE_VERSION = 1;
+    //private static final String DATABASE_PATH = "/data/data/com.uni3000.uni3000/databases/";
 
     // the DAO object we use to access the SimpleData table
     private Dao<Vocab_Word, String> vocabWordDao = null;
     private Dao<Vocab_Definition, String> vocabWordDefinitionDao = null;
     private Dao<Vocab, String> vocabDao = null;
+    private final Context context;
+    private final DatabaseInitializer initializer;
 
-    public DatabaseHelper(Context context) {
+    public DatabaseHelper(Context context, DatabaseInitializer initializer) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        /*
-            // If database did not exist, try copying existing database from assets folder.
-            try {
-                File dir = new File(DATABASE_PATH);
-                dir.mkdirs();
-                InputStream myinput = context.getAssets().open("databases/" + DATABASE_NAME);
-                String outfilename = DATABASE_PATH + DATABASE_NAME;
-                Log.i(DatabaseHelper.class.getName(), "DB Path : " + outfilename);
-                OutputStream myoutput = new FileOutputStream(outfilename);
-                byte[] buffer = new byte[1024];
-                int length;
-                while ((length = myinput.read(buffer)) > 0) {
-                    myoutput.write(buffer, 0, length);
-                }
-                myoutput.flush();
-                myoutput.close();
-                myinput.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            */
+        this.context = context;
+        this.initializer = initializer;
+        try {
+            initializer.createDatabase();
+            initializer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onCreate(SQLiteDatabase database,ConnectionSource connectionSource) {
+        Log.i(DatabaseHelper.class.getName(), "onCreate");
         /*try {
             TableUtils.createTable(connectionSource, Vocab_Word.class);
         } catch (SQLException e) {
@@ -72,6 +55,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db,ConnectionSource connectionSource, int oldVersion, int newVersion) {
+        Log.i(DatabaseHelper.class.getName(), "onUpgrade");
         try {
             List<String> allSql = new ArrayList<String>();
             switch(oldVersion)

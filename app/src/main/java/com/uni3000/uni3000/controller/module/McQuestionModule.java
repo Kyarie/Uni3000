@@ -5,6 +5,8 @@ import android.content.Context;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
+
+import com.uni3000.uni3000.data.DatabaseInitializer;
 import com.uni3000.uni3000.data.DatabaseManager;
 import com.uni3000.uni3000.data.DatabaseHelper;
 import com.uni3000.uni3000.model.Interface.IMcQuestion;
@@ -25,8 +27,13 @@ public class McQuestionModule {
     }
 
     @Provides @Singleton
-    DatabaseHelper provideUser(Context context){
-        return new DatabaseHelper(context);
+    DatabaseInitializer provideDatabaseInitializer(Context context){
+        return new DatabaseInitializer(context);
+    }
+
+    @Provides @Singleton
+    DatabaseHelper provideDatabaseHelper(Context context, DatabaseInitializer initializer){
+        return new DatabaseHelper(context, initializer);
     }
 
     @Provides @Singleton
