@@ -6,5 +6,5 @@ public final class LocationType {
     @Inject
     public LocationType() {
     }
-    public static final String LIBRARY = "library";
+    public static final String LIBRARY = "LIBRARY";
 }

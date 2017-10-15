@@ -4,6 +4,8 @@ import android.content.Context;
 
 import dagger.Component;
 import javax.inject.Singleton;
+
+import com.uni3000.uni3000.controller.QuestController;
 import com.uni3000.uni3000.controller.UserController;
 import com.uni3000.uni3000.controller.module.UserModule;
 import com.uni3000.uni3000.controller.McQuestionController;
@@ -18,5 +20,9 @@ public interface ControllerCreator {
 
     McQuestionController provideMcQuestionController();
 
+    QuestController provideQuestController();
+
     void inject(McQuestionController mcQuestionController);
+
+    void inject(QuestController questController);
 }

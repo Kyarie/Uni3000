@@ -38,6 +38,14 @@ public class DatabaseInitializer extends SQLiteOpenHelper{
         }
     }
 
+    public void overrideOldDatabase() throws IOException {
+        try {
+            copyDatabase();
+        } catch (IOException e) {
+            throw new Error("Error copying database");
+        }
+    }
+
     private  boolean checkDatabase() {
         File dbFile = this.context.getDatabasePath(DATABASE_NAME);
         return dbFile.exists();

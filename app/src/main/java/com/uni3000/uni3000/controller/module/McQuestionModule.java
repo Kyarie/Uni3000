@@ -10,7 +10,9 @@ import com.uni3000.uni3000.data.DatabaseInitializer;
 import com.uni3000.uni3000.data.DatabaseManager;
 import com.uni3000.uni3000.data.DatabaseHelper;
 import com.uni3000.uni3000.model.Interface.IMcQuestion;
+import com.uni3000.uni3000.model.Interface.IQuestHelper;
 import com.uni3000.uni3000.model.McQuestion;
+import com.uni3000.uni3000.model.QuestHelper;
 
 @Module
 public class McQuestionModule {
@@ -44,5 +46,10 @@ public class McQuestionModule {
     @Provides
     IMcQuestion provideIMcQuestion(DatabaseHelper dbHelper){
         return new McQuestion(dbHelper);
+    }
+
+    @Provides
+    IQuestHelper provideIQuestHelper(DatabaseHelper dbHelper){
+        return new QuestHelper(dbHelper);
     }
 }

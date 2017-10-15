@@ -15,16 +15,24 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.uni3000.uni3000.model.Vocab_Word;
 import com.uni3000.uni3000.model.Vocab_Definition;
 import com.uni3000.uni3000.model.Vocab;
+import com.uni3000.uni3000.model.Action_Button;
+import com.uni3000.uni3000.model.Location;
+import com.uni3000.uni3000.model.Quest;
+import com.uni3000.uni3000.model.Quest_Action;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final String DATABASE_NAME = "uni3000_db.sqlite";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     //private static final String DATABASE_PATH = "/data/data/com.uni3000.uni3000/databases/";
 
     // the DAO object we use to access the SimpleData table
     private Dao<Vocab_Word, String> vocabWordDao = null;
     private Dao<Vocab_Definition, String> vocabWordDefinitionDao = null;
     private Dao<Vocab, String> vocabDao = null;
+    private Dao<Action_Button, String> actionButtonDao = null;
+    private Dao<Location, String> locationDao = null;
+    private Dao<Quest, String> questDao = null;
+    private Dao<Quest_Action, String> questActionDao = null;
     private final Context context;
     private final DatabaseInitializer initializer;
 
@@ -57,6 +65,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public void onUpgrade(SQLiteDatabase db,ConnectionSource connectionSource, int oldVersion, int newVersion) {
         Log.i(DatabaseHelper.class.getName(), "onUpgrade");
         try {
+            initializer.overrideOldDatabase();
+            /*
             List<String> allSql = new ArrayList<String>();
             switch(oldVersion)
             {
@@ -66,8 +76,11 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             }
             for (String sql : allSql) {
                 db.execSQL(sql);
-            }
+            }*/
         } catch (SQLException e) {
+            Log.e(DatabaseHelper.class.getName(), "exception during onUpgrade", e);
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             Log.e(DatabaseHelper.class.getName(), "exception during onUpgrade", e);
             throw new RuntimeException(e);
         }
@@ -104,5 +117,49 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             }
         }
         return vocabDao;
+    }
+
+    public Dao<Action_Button, String> getActionButtonDao() {
+        if (null == actionButtonDao) {
+            try {
+                actionButtonDao = getDao(Action_Button.class);
+            }catch (java.sql.SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return actionButtonDao;
+    }
+
+    public Dao<Location, String> getLocationDao() {
+        if (null == locationDao) {
+            try {
+                locationDao = getDao(Location.class);
+            }catch (java.sql.SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return locationDao;
+    }
+
+    public Dao<Quest, String> getQuestDao() {
+        if (null == questDao) {
+            try {
+                questDao = getDao(Quest.class);
+            }catch (java.sql.SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return questDao;
+    }
+
+    public Dao<Quest_Action, String> getQuestActionDao() {
+        if (null == questActionDao) {
+            try {
+                questActionDao = getDao(Quest_Action.class);
+            }catch (java.sql.SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return questActionDao;
     }
 }

@@ -12,12 +12,22 @@ import android.widget.LinearLayout;
 import android.widget.Button;
 
 import com.uni3000.uni3000.R;
+import com.uni3000.uni3000.controller.QuestController;
+import com.uni3000.uni3000.controller.module.McQuestionModule;
+import com.uni3000.uni3000.di.ControllerCreator;
+import com.uni3000.uni3000.di.DaggerControllerCreator;
+import com.uni3000.uni3000.model.Action_Button;
+
+import java.util.List;
+
+import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
 
 public class ActionFragment extends Fragment {
 
     private String location;
+    QuestController questController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,14 +40,18 @@ public class ActionFragment extends Fragment {
     public void onAttach(Context context) {
         AndroidSupportInjection.inject(this);
         super.onAttach(context);
+        ControllerCreator creator = DaggerControllerCreator.builder().mcQuestionModule(new McQuestionModule(getActivity())).build();
+        questController = creator.provideQuestController();
     }
 
     public void loadButton() {
         LinearLayout actionNav = (LinearLayout)getView().findViewById(R.id.action_layout);
-        // get from db
-        Button btnTag = new Button(getActivity());
-        btnTag.setText(this.location);
-        actionNav.addView(btnTag);
+        List<Action_Button> actionButtons = questController.getActiveActionButtonByLocation(location);
+        for (Action_Button action : actionButtons) {
+            Button button = new Button(getActivity());
+            button.setText(action.getActionButtonLabel());
+            actionNav.addView(button);
+        }
     }
 
     public void setLocation(String location) {
