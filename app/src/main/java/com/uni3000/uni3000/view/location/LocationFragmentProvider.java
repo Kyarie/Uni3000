@@ -1,4 +1,4 @@
-package com.uni3000.uni3000.view.library;
+package com.uni3000.uni3000.view.location;
 
 import com.uni3000.uni3000.view.game_play.OptionsFragment;
 import com.uni3000.uni3000.view.game_play.module.GamePlayFragmentModule;
@@ -11,7 +11,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
 @Module
-public abstract class FragmentProvider {
+public abstract class LocationFragmentProvider {
 
     @ContributesAndroidInjector(modules = UserHeaderModule.class)
     abstract UserHeaderFragment provideUserHeaderFragmentFactory();
@@ -19,6 +19,6 @@ public abstract class FragmentProvider {
     @ContributesAndroidInjector(modules = NavigationTabModule.class)
     abstract NavigationTabFragment provideNavigationTabFragmentFactory();
 
-    @ContributesAndroidInjector(modules = GamePlayFragmentModule.class)
-    abstract OptionsFragment provideDialogFragmentFactory();
+    @ContributesAndroidInjector(modules = NavigationTabModule.class)
+    abstract ActionFragment provideActionFragmentFactory();
 }

@@ -13,10 +13,8 @@ import android.widget.Button;
 import com.uni3000.uni3000.R;
 import com.uni3000.uni3000.view.bar.BarActivity;
 import com.uni3000.uni3000.view.build.BuildActivity;
-import com.uni3000.uni3000.view.library.LibraryActivity;
+import com.uni3000.uni3000.view.location.LibraryActivity;
 import com.uni3000.uni3000.view.map.MapActivity;
-import com.uni3000.uni3000.view.map.location.LocationActivity;
-import com.uni3000.uni3000.view.map.university.UniversityActivity;
 
 import dagger.android.support.AndroidSupportInjection;
 

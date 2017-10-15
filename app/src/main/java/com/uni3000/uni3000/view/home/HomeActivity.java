@@ -33,11 +33,10 @@ public class HomeActivity extends AppCompatActivity implements HasSupportFragmen
         if (savedInstanceState == null)
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, UserHeaderFragment.newInstance())
-                    .add(R.id.container, NavigationTabFragment.newInstance())
+                    .add(R.id.header_profile, UserHeaderFragment.newInstance())
+                    .add(R.id.footer_navigation, NavigationTabFragment.newInstance())
                     .commitAllowingStateLoss();
     }
-
 
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {

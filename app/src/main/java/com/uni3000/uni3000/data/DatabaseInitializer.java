@@ -36,7 +36,6 @@ public class DatabaseInitializer extends SQLiteOpenHelper{
                 throw new Error("Error copying database");
             }
         }
-
     }
 
     private  boolean checkDatabase() {

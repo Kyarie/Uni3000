@@ -20,7 +20,7 @@
         <activity
             android:name=".view.map.university.UniversityActivity"
             android:label="@string/title_activity_university" />
-        <activity android:name=".view.library.LibraryActivity" />
+        <activity android:name=".view.location.LibraryActivity" />
         <activity android:name=".view.bar.BarActivity" />
         <activity android:name=".view.build.BuildActivity" />
         <activity android:name=".view.map.university.recruit.RecruitActivity" />
