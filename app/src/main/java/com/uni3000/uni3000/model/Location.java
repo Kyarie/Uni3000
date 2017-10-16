@@ -8,6 +8,10 @@ public class Location {
 
     public static final String LOCATION_ID = "LOCATION_ID";
     public static final String LOCATION_NAME = "LOCATION_NAME";
+    public static final String LOCATION_TYPE = "LOCATION_TYPE";
+    public static final String LOCATION_COST = "LOCATION_COST";
+    public static final String LOCATION_BASE_PROFIT = "LOCATION_BASE_PROFIT";
+    public static final String PURCHASE_STATUS = "PURCHASE_STATUS";
 
     @DatabaseField(columnName = LOCATION_ID, generatedId=true)
     private int locationId;
@@ -15,16 +19,16 @@ public class Location {
     @DatabaseField(columnName = LOCATION_NAME)
     private String locationName;
 
-    @DatabaseField(columnName = "LOCATION_TYPE")
+    @DatabaseField(columnName = LOCATION_TYPE)
     private char locationType;
 
-    @DatabaseField(columnName = "LOCATION_COST")
+    @DatabaseField(columnName = LOCATION_COST)
     private int locationCost;
 
-    @DatabaseField(columnName = "LOCATION_BASE_PROFIT")
+    @DatabaseField(columnName = LOCATION_BASE_PROFIT)
     private int locationBaseProfit;
 
-    @DatabaseField(columnName = "PURCHASE_STATUS")
+    @DatabaseField(columnName = PURCHASE_STATUS)
     private char purhcaseStatus;
 
     public int getLocationId() {

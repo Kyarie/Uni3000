@@ -1,12 +1,14 @@
 package com.uni3000.uni3000.view.location;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ScrollingView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Button;
@@ -17,6 +19,7 @@ import com.uni3000.uni3000.controller.module.McQuestionModule;
 import com.uni3000.uni3000.di.ControllerCreator;
 import com.uni3000.uni3000.di.DaggerControllerCreator;
 import com.uni3000.uni3000.model.Action_Button;
+import com.uni3000.uni3000.view.game_play.QuestionActivity;
 
 import java.util.List;
 
@@ -50,11 +53,22 @@ public class ActionFragment extends Fragment {
         for (Action_Button action : actionButtons) {
             Button button = new Button(getActivity());
             button.setText(action.getActionButtonLabel());
+            button.setOnClickListener(actionClickListener(button));
             actionNav.addView(button);
         }
     }
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    OnClickListener actionClickListener(final Button button) {
+        return new OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), QuestionActivity.class);
+                intent.putExtra("activity", getActivity().getClass().getName());
+                startActivity(intent);
+            }
+        };
     }
 }

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,27 +5,25 @@
     android:layout_height="match_parent"
     tools:context="com.uni3000.uni3000.view.map.university.UniversityActivity">
 
-    <Button
-        android:id="@+id/officeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/map_officeButton"
-        android:visibility="visible"
-        android:onClick="ButtonOnClick"/>
-
-    <Button
-        android:id="@+id/testLocationButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/officeButton"
-        android:onClick="ButtonOnClick"
-        android:text="test location"
-        android:visibility="visible" />
-
-    <FrameLayout
-        android:id="@+id/container"
+    <fragment android:name="com.uni3000.uni3000.view.user_header.UserHeaderFragment"
+        android:id="@+id/header_profile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
 
-    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/active_locations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/header_profile" >
+
+    </LinearLayout>
+
+    <fragment android:name="com.uni3000.uni3000.view.navigation_tab.NavigationTabFragment"
+        android:id="@+id/footer_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
 </RelativeLayout>

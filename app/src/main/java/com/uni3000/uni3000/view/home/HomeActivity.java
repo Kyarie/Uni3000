@@ -29,13 +29,6 @@ public class HomeActivity extends AppCompatActivity implements HasSupportFragmen
         getWindow().setFlags(WindowManager.LayoutParams. FLAG_FULLSCREEN ,
                 WindowManager.LayoutParams. FLAG_FULLSCREEN);*/
         setContentView(R.layout.activity_home);
-
-        if (savedInstanceState == null)
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.header_profile, UserHeaderFragment.newInstance())
-                    .add(R.id.footer_navigation, NavigationTabFragment.newInstance())
-                    .commitAllowingStateLoss();
     }
 
     @Override

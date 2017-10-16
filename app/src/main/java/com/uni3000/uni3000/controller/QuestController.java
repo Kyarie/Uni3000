@@ -3,6 +3,7 @@ package com.uni3000.uni3000.controller;
 import com.uni3000.uni3000.model.Action_Button;
 import com.uni3000.uni3000.model.Interface.IMcQuestion;
 import com.uni3000.uni3000.model.Interface.IQuestHelper;
+import com.uni3000.uni3000.model.Location;
 
 import java.util.List;
 
@@ -19,5 +20,9 @@ public class QuestController {
 
     public List<Action_Button> getActiveActionButtonByLocation(String location) {
         return questHelper.getActiveActionButtonByLocation(location);
+    }
+
+    public List<Location> getActiveLocation() {
+        return questHelper.getActiveLocation();
     }
 }

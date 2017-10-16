@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     tools:context="com.uni3000.uni3000.view.map.university.UniversityActivity">
 
-    <FrameLayout
+    <fragment android:name="com.uni3000.uni3000.view.user_header.UserHeaderFragment"
         android:id="@+id/header_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true" />
 
     <ImageView
         android:id="@+id/library"
@@ -27,10 +27,10 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true" />
 
-    <FrameLayout
+    <fragment android:name="com.uni3000.uni3000.view.navigation_tab.NavigationTabFragment"
         android:id="@+id/footer_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

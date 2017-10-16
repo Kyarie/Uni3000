@@ -26,4 +26,14 @@ public class QuestHelper implements IQuestHelper {
         return actionButtons;
     }
 
+    public List<Location> getActiveLocation() {
+        List<Location> locations = null;
+        try {
+            locations = db.getLocationDao().queryBuilder().where().eq(Location.PURCHASE_STATUS, 'B').query();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return locations;
+    }
+
 }

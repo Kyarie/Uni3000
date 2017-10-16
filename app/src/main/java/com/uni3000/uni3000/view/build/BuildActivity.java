@@ -25,13 +25,6 @@ public class BuildActivity extends AppCompatActivity implements HasSupportFragme
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build);
-
-        if (savedInstanceState == null)
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.container, UserHeaderFragment.newInstance())
-                    .add(R.id.container, NavigationTabFragment.newInstance())
-                    .commitAllowingStateLoss();
     }
 
     @Override

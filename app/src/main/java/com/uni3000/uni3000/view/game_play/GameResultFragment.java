@@ -13,13 +13,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.uni3000.uni3000.R;
-import com.uni3000.uni3000.view.bar.BarActivity;
+import com.uni3000.uni3000.view.location.BarActivity;
 
 import dagger.android.support.AndroidSupportInjection;
 
 public class GameResultFragment extends Fragment implements OnClickListener {
     TextView scoreResult;
     TextView correctAnswer;
+    String returnLocation;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +39,7 @@ public class GameResultFragment extends Fragment implements OnClickListener {
         int correctNumber = result.getInt("correctNumber");
         correctAnswer = (TextView) getView().findViewById(R.id.correctAnswer);
         correctAnswer.setText("Correct: " + Integer.toString(correctNumber));
+        returnLocation = result.getString("activity");
         Button buttonExit = (Button)getView().findViewById(R.id.buttonExitQuestion);
         buttonExit.setOnClickListener(this);
     }
@@ -51,9 +53,13 @@ public class GameResultFragment extends Fragment implements OnClickListener {
     public void onClick(final View v) {
         switch (v.getId()) {
             case R.id.buttonExitQuestion:
-                Intent intent = new Intent(getActivity(), BarActivity.class);
-                startActivity(intent);
-                break;
+                try {
+                    Class<?> returnActivity = Class.forName(returnLocation);
+                    startActivity(new Intent(getActivity(), returnActivity));
+                    break;
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
         }
     }
 }

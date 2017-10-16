@@ -25,13 +25,6 @@ public class RecruitActivity extends AppCompatActivity implements HasSupportFrag
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recruit);
-
-        if (savedInstanceState == null)
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.container, UserHeaderFragment.newInstance())
-                    .add(R.id.container, NavigationTabFragment.newInstance())
-                    .commitAllowingStateLoss();
     }
 
     @Override

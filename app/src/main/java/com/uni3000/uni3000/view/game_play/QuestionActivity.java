@@ -28,6 +28,7 @@ public class QuestionActivity extends AppCompatActivity implements HasSupportFra
     int totalQuestionNumber;
     int currentQuestionNumber;
     int correctAnswerNumber;
+    String returnLocation;
 
     @Inject
     DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
@@ -42,6 +43,8 @@ public class QuestionActivity extends AppCompatActivity implements HasSupportFra
         }
         optionsFragment = new OptionsFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.bottomOptions, optionsFragment).commit();
+        Bundle extras = getIntent().getExtras();
+        returnLocation = extras.getString("activity");
 
         ControllerCreator creator = DaggerControllerCreator.builder().mcQuestionModule(new McQuestionModule(this)).build();
         quesController = creator.provideMcQuestionController();
@@ -82,6 +85,7 @@ public class QuestionActivity extends AppCompatActivity implements HasSupportFra
         Bundle result = new Bundle();
         result.putInt("score", score);
         result.putInt("correctNumber", correctAnswerNumber);
+        result.putString("activity", returnLocation);
         gameResultFragment.setArguments(result);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.bottomOptions, gameResultFragment);

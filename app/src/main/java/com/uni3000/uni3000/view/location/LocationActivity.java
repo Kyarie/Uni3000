@@ -1,4 +1,4 @@
-package com.uni3000.uni3000.view.map.location;
+package com.uni3000.uni3000.view.location;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -18,35 +18,27 @@ import dagger.android.support.HasSupportFragmentInjector;
 
 public class LocationActivity extends AppCompatActivity implements HasSupportFragmentInjector {
 
-    @Inject
-    DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
+    @Inject DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
+    String location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
-
-        if (savedInstanceState == null)
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.container, UserHeaderFragment.newInstance())
-                    .add(R.id.container, NavigationTabFragment.newInstance())
-                    .commitAllowingStateLoss();
-
         Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            String value = extras.getString("key");
-
-            TextView variable = (TextView)findViewById(R.id.variable);
-            variable.setText(value);
-        }
-
-
+        location = extras.getString("location");
+        this.loadAction(location);
     }
 
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {
         return fragmentDispatchingAndroidInjector;
+    }
+
+    public void loadAction(String location) {
+        ActionFragment actionFragment = (ActionFragment) getSupportFragmentManager().findFragmentById(R.id.action_navigation);
+        actionFragment.setLocation(location);
+        actionFragment.loadButton();
     }
 }

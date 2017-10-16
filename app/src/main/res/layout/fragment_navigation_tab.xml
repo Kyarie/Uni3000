@@ -6,7 +6,7 @@
     android:weightSum="4" >
 
     <Button
-        android:id="@+id/universityTab"
+        android:id="@+id/university_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/university_size"
@@ -15,7 +15,7 @@
         android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/libraryTab"
+        android:id="@+id/library_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/libraryTab"
@@ -24,7 +24,7 @@
         android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/barTab"
+        android:id="@+id/bar_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/barTab"
@@ -33,7 +33,7 @@
         android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/buildTab"
+        android:id="@+id/build_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/buildTab"

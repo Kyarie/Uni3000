@@ -29,14 +29,6 @@ public class LibraryActivity extends AppCompatActivity implements HasSupportFrag
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
-
-        if (savedInstanceState == null)
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.header_profile, UserHeaderFragment.newInstance())
-                    .add(R.id.footer_navigation, NavigationTabFragment.newInstance())
-                    .commitAllowingStateLoss();
-
         this.loadAction();
     }
 
