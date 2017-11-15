@@ -2,22 +2,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/action_scroll">
+    android:id="@+id/store_scroll">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:id="@+id/action_layout">
-
-        <Button
-            android:id="@+id/chatButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Placeholder"
-            android:textSize="12sp"
-            android:onClick="ButtonOnClick"/>
+        android:id="@+id/store_layout">
 
     </LinearLayout>
 </ScrollView>
