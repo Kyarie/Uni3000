@@ -1,4 +1,4 @@
-package com.uni3000.uni3000.model;
+package com.uni3000.uni3000.model.DatabaseObject;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;

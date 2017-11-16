@@ -12,7 +12,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.uni3000.uni3000.R;
-import com.uni3000.uni3000.model.Vocab;
+import com.uni3000.uni3000.model.DatabaseObject.Vocab;
 
 import java.util.ArrayList;
 import java.util.List;

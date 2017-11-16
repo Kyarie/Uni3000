@@ -2,10 +2,8 @@ package com.uni3000.uni3000.view.location;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ScrollingView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,15 +13,13 @@ import android.widget.Button;
 
 import com.uni3000.uni3000.R;
 import com.uni3000.uni3000.controller.QuestController;
-import com.uni3000.uni3000.controller.module.McQuestionModule;
+import com.uni3000.uni3000.controller.module.ControllerModule;
 import com.uni3000.uni3000.di.ControllerCreator;
 import com.uni3000.uni3000.di.DaggerControllerCreator;
-import com.uni3000.uni3000.model.Action_Button;
+import com.uni3000.uni3000.model.DatabaseObject.Action_Button;
 import com.uni3000.uni3000.view.game_play.QuestionActivity;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
 
@@ -43,7 +39,7 @@ public class ActionFragment extends Fragment {
     public void onAttach(Context context) {
         AndroidSupportInjection.inject(this);
         super.onAttach(context);
-        ControllerCreator creator = DaggerControllerCreator.builder().mcQuestionModule(new McQuestionModule(getActivity())).build();
+        ControllerCreator creator = DaggerControllerCreator.builder().controllerModule(new ControllerModule(getActivity())).build();
         questController = creator.provideQuestController();
     }
 

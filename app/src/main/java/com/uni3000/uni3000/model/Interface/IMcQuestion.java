@@ -1,6 +1,6 @@
 package com.uni3000.uni3000.model.Interface;
 
-import com.uni3000.uni3000.model.Vocab;
+import com.uni3000.uni3000.model.DatabaseObject.Vocab;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.inject.Inject;
 
-import com.uni3000.uni3000.model.Vocab_Word;
+import com.uni3000.uni3000.model.DatabaseObject.Vocab_Word;
 
 public class DatabaseManager {
 

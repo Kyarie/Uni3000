@@ -9,17 +9,19 @@ import javax.inject.Singleton;
 import com.uni3000.uni3000.data.DatabaseInitializer;
 import com.uni3000.uni3000.data.DatabaseManager;
 import com.uni3000.uni3000.data.DatabaseHelper;
+import com.uni3000.uni3000.model.Interface.IStoreManager;
 import com.uni3000.uni3000.model.Interface.IMcQuestion;
 import com.uni3000.uni3000.model.Interface.IQuestHelper;
+import com.uni3000.uni3000.model.LocationHelper;
 import com.uni3000.uni3000.model.McQuestion;
 import com.uni3000.uni3000.model.QuestHelper;
 
 @Module
-public class McQuestionModule {
+public class ControllerModule {
 
     private final Context context;
 
-    public McQuestionModule(Context context) {
+    public ControllerModule(Context context) {
         this.context = context;
     }
 
@@ -51,5 +53,10 @@ public class McQuestionModule {
     @Provides
     IQuestHelper provideIQuestHelper(DatabaseHelper dbHelper){
         return new QuestHelper(dbHelper);
+    }
+
+    @Provides
+    IStoreManager provideIBuildingStore(DatabaseHelper dbHelper) {
+        return new LocationHelper(dbHelper);
     }
 }

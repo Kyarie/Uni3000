@@ -1,10 +1,11 @@
 package com.uni3000.uni3000.model;
 
 import com.uni3000.uni3000.data.DatabaseHelper;
+import com.uni3000.uni3000.model.DatabaseObject.Action_Button;
+import com.uni3000.uni3000.model.DatabaseObject.Location;
 import com.uni3000.uni3000.model.Interface.IQuestHelper;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class QuestHelper implements IQuestHelper {

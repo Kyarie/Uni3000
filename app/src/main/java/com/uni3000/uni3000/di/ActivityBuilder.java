@@ -3,6 +3,7 @@ package com.uni3000.uni3000.di;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
+import com.uni3000.uni3000.view.build.BuildFragmentProvider;
 import com.uni3000.uni3000.view.location.BarActivity;
 import com.uni3000.uni3000.view.build.BuildActivity;
 import com.uni3000.uni3000.view.build.BuildModule;
@@ -37,7 +38,7 @@ public abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = {LocationModule.class, LocationFragmentProvider.class})
     abstract BarActivity bindBarActivity();
 
-    @ContributesAndroidInjector(modules = {BuildModule.class, com.uni3000.uni3000.view.build.FragmentProvider.class})
+    @ContributesAndroidInjector(modules = {BuildModule.class, BuildFragmentProvider.class})
     abstract BuildActivity bindBuildActivity();
 
     @ContributesAndroidInjector(modules = {RecruitModule.class, com.uni3000.uni3000.view.map.university.recruit.FragmentProvider.class})

@@ -14,7 +14,7 @@ import dagger.android.support.AndroidSupportInjection;
 import com.uni3000.uni3000.controller.UserController;
 import com.uni3000.uni3000.controller.McQuestionController;
 
-import com.uni3000.uni3000.controller.module.McQuestionModule;
+import com.uni3000.uni3000.controller.module.ControllerModule;
 import com.uni3000.uni3000.viewmodel.UserViewModel;
 import com.uni3000.uni3000.di.DaggerControllerCreator;
 import com.uni3000.uni3000.di.ControllerCreator;
@@ -51,7 +51,7 @@ public class UserHeaderFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ControllerCreator creator = DaggerControllerCreator.builder().mcQuestionModule(new McQuestionModule(this.getContext())).build();
+        ControllerCreator creator = DaggerControllerCreator.builder().controllerModule(new ControllerModule(this.getContext())).build();
         userController = creator.provideUserController();
         user = userController.getCurrentUserInfo();
     }

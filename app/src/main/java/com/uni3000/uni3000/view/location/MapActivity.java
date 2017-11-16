@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 
 import com.uni3000.uni3000.R;
 import com.uni3000.uni3000.controller.QuestController;
-import com.uni3000.uni3000.controller.module.McQuestionModule;
+import com.uni3000.uni3000.controller.module.ControllerModule;
 import com.uni3000.uni3000.di.ControllerCreator;
 import com.uni3000.uni3000.di.DaggerControllerCreator;
-import com.uni3000.uni3000.model.Location;
+import com.uni3000.uni3000.model.DatabaseObject.Location;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class MapActivity extends AppCompatActivity implements HasSupportFragment
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        ControllerCreator creator = DaggerControllerCreator.builder().mcQuestionModule(new McQuestionModule(this)).build();
+        ControllerCreator creator = DaggerControllerCreator.builder().controllerModule(new ControllerModule(this)).build();
         questController = creator.provideQuestController();
         this.loadLocation();
     }

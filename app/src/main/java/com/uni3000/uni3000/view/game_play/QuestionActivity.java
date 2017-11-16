@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.uni3000.uni3000.R;
-import com.uni3000.uni3000.controller.module.McQuestionModule;
+import com.uni3000.uni3000.controller.module.ControllerModule;
 import com.uni3000.uni3000.di.ControllerCreator;
 import com.uni3000.uni3000.di.DaggerControllerCreator;
 import com.uni3000.uni3000.controller.McQuestionController;
@@ -46,7 +46,7 @@ public class QuestionActivity extends AppCompatActivity implements HasSupportFra
         Bundle extras = getIntent().getExtras();
         returnLocation = extras.getString("activity");
 
-        ControllerCreator creator = DaggerControllerCreator.builder().mcQuestionModule(new McQuestionModule(this)).build();
+        ControllerCreator creator = DaggerControllerCreator.builder().controllerModule(new ControllerModule(this)).build();
         quesController = creator.provideMcQuestionController();
         score = 0;
         totalQuestionNumber = 3; // TODO: get from quest database

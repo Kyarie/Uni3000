@@ -1,8 +1,5 @@
 package com.uni3000.uni3000.data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.database.SQLException;
 import java.io.IOException;
@@ -12,13 +9,13 @@ import android.util.Log;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
-import com.uni3000.uni3000.model.Vocab_Word;
-import com.uni3000.uni3000.model.Vocab_Definition;
-import com.uni3000.uni3000.model.Vocab;
-import com.uni3000.uni3000.model.Action_Button;
-import com.uni3000.uni3000.model.Location;
-import com.uni3000.uni3000.model.Quest;
-import com.uni3000.uni3000.model.Quest_Action;
+import com.uni3000.uni3000.model.DatabaseObject.Vocab_Word;
+import com.uni3000.uni3000.model.DatabaseObject.Vocab_Definition;
+import com.uni3000.uni3000.model.DatabaseObject.Vocab;
+import com.uni3000.uni3000.model.DatabaseObject.Action_Button;
+import com.uni3000.uni3000.model.DatabaseObject.Location;
+import com.uni3000.uni3000.model.DatabaseObject.Quest;
+import com.uni3000.uni3000.model.DatabaseObject.Quest_Action;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final String DATABASE_NAME = "uni3000_db.sqlite";

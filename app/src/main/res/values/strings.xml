@@ -3,10 +3,16 @@
 
     <!-- Button Labels-->
     <string name="finish_button">Finish</string>
+    <string name="buy_button">Buy</string>
+    <string name="sell_button">Sell</string>
 
     <!-- Labels -->
     <string name="user_header_name">User:</string>
     <string name="user_header_level">Level:</string>
+
+    <string name="store_building_item_name">Building:</string>
+    <string name="store_building_price">Price:</string>
+    <string name="store_building_profit">Profit:</string>
 
     <string name="university_size">Size</string> <!-- size e.g. crappy house -> college -> university -->
     <string name="libraryTab">Library</string>
@@ -16,15 +22,6 @@
     <string name="university_name">Uni Name </string>
     <string name="money">Money: </string>
     <string name="ranking">Ranking: </string>
-
-    <string name="personName">Kunning</string>
-    <string name="question">What is the right word?</string>
-    <string name="definition">v. cease to support or look after (someone); desert</string>
-    <string name="option1">abandon</string>
-    <string name="option2">pig</string>
-    <string name="option3">cow</string>
-    <string name="option4">cat</string>
-    <string name="option5">dog</string>
 
     <!-- Buttons -->
     <string name="map_officeButton">Office</string>
@@ -46,28 +43,12 @@
     <string name="library_reviewButton">Review</string>
     <string name="library_viewallButton">View All</string>
 
-    <string name="bar_chatButton1">Chat with\nBartender</string>
-    <string name="bar_chatButton2">Chat with \n Mary</string>
-    <string name="bar_chatButton3">Chat with \n Alex</string>
-    <string name="bar_chatButton4">Chat with \n Bob</string>
-    <string name="bar_chatButton5">Chat with \n Kunning</string>
-
-
-    <string name="build_dormitoryButton">Dormitory</string>
-    <string name="build_dormitoryHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
-    <string name="build_recreationalButton">Recreational</string>
-    <string name="build_recreationalHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
-    <string name="build_educationalButton">Educational</string>
-    <string name="build_educationalHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
-    <string name="build_landmarkButton">Landmark</string>
-    <string name="build_landmarkHint">Cost: $\nProfit: +$/day\nStudent Population: +</string>
-
-    <!-- multiple choice -->
-    <array name="mc_array">abandon abash</array>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_university">UniversityActivity</string>
     <string name="title_activity_settings">Settings</string>
+
+    <!-- TODO: Temp - to be removed -->
+    <string name="personName">Kunning</string>
 
 </resources>

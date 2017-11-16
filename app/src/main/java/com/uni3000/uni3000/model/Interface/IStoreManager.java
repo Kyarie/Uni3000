@@ -1,10 +1,11 @@
 package com.uni3000.uni3000.model.Interface;
 
-import com.uni3000.uni3000.model.Location;
+import com.uni3000.uni3000.model.StoreItem;
 
 import java.util.List;
 
-public interface ILocationHelper {
-    public List<Location> getAvailableLocation();
-    public void buy(Location item);
+public interface IStoreManager {
+    public List<StoreItem> getAvailableItems();
+    public void buy(StoreItem item);
+    public void sell(StoreItem item);
 }

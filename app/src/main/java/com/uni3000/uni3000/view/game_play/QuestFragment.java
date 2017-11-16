@@ -57,17 +57,6 @@ public class QuestFragment extends android.support.v4.app.DialogFragment {
             }
         });
 
-        RadioButton option1 = (RadioButton) getView().findViewById(R.id.option1);
-        option1.setText(R.string.option1);
-        RadioButton option2 = (RadioButton) getView().findViewById(R.id.option2);
-        option2.setText(R.string.option2);
-        RadioButton option3 = (RadioButton) getView().findViewById(R.id.option3);
-        option3.setText(R.string.option3);
-        RadioButton option4 = (RadioButton) getView().findViewById(R.id.option4);
-        option4.setText(R.string.option4);
-        RadioButton option5 = (RadioButton) getView().findViewById(R.id.option5);
-        option5.setText(R.string.option5);
-
     }
 
     @Override

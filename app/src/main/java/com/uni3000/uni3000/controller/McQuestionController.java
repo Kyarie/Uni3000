@@ -1,9 +1,8 @@
 package com.uni3000.uni3000.controller;
 
 import javax.inject.Inject;
-import com.uni3000.uni3000.data.DatabaseManager;
-import com.uni3000.uni3000.model.Vocab;
-import com.uni3000.uni3000.model.Vocab_Word;
+
+import com.uni3000.uni3000.model.DatabaseObject.Vocab;
 import com.uni3000.uni3000.model.Interface.IMcQuestion;
 
 import java.util.List;

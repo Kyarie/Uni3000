@@ -1,6 +1,7 @@
 package com.uni3000.uni3000.model;
 
 import com.uni3000.uni3000.data.DatabaseHelper;
+import com.uni3000.uni3000.model.DatabaseObject.Vocab;
 import com.uni3000.uni3000.model.Interface.IMcQuestion;
 
 import java.sql.SQLException;

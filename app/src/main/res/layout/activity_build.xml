@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true" />
 
     <fragment android:name="com.uni3000.uni3000.view.build.StoreFragment"
-        android:id="@+id/action_navigation"
+        android:id="@+id/item_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true" />

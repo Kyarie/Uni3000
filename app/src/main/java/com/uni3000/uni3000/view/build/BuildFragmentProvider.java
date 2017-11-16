@@ -9,11 +9,14 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
 @Module
-public abstract class FragmentProvider {
+public abstract class BuildFragmentProvider {
 
     @ContributesAndroidInjector(modules = UserHeaderModule.class)
     abstract UserHeaderFragment provideUserHeaderFragmentFactory();
 
     @ContributesAndroidInjector(modules = NavigationTabModule.class)
     abstract NavigationTabFragment provideNavigationTabFragmentFactory();
+
+    @ContributesAndroidInjector(modules = NavigationTabModule.class)
+    abstract StoreFragment provideStoreFragmentFactory();
 }
