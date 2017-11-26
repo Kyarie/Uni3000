@@ -1,15 +1,19 @@
 package com.uni3000.uni3000.model;
 
+import android.content.Context;
+
 import com.uni3000.uni3000.model.Interface.IUser;
 
 public class User implements IUser {
-    public String username;
-    public int level;
+    private String username;
+    private int level;
+    private Context context;
 
 
-    public User() {
+    public User(Context context) {
         this.username = this.getCurrentUsername();
         this.level = this.getCurrentUserLevel();
+        this.context = context;
     }
 
     public String getUsername() {

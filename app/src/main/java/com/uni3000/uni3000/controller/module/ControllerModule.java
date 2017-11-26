@@ -12,9 +12,11 @@ import com.uni3000.uni3000.data.DatabaseHelper;
 import com.uni3000.uni3000.model.Interface.IStoreManager;
 import com.uni3000.uni3000.model.Interface.IMcQuestion;
 import com.uni3000.uni3000.model.Interface.IQuestHelper;
+import com.uni3000.uni3000.model.Interface.IUser;
 import com.uni3000.uni3000.model.LocationHelper;
 import com.uni3000.uni3000.model.McQuestion;
 import com.uni3000.uni3000.model.QuestHelper;
+import com.uni3000.uni3000.model.User;
 
 @Module
 public class ControllerModule {
@@ -58,5 +60,10 @@ public class ControllerModule {
     @Provides
     IStoreManager provideIBuildingStore(DatabaseHelper dbHelper) {
         return new LocationHelper(dbHelper);
+    }
+
+    @Provides @Singleton
+    IUser provideIUser(Context context) {
+        return new User(context);
     }
 }
