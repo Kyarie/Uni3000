@@ -6,6 +6,7 @@ import dagger.Component;
 import javax.inject.Singleton;
 
 import com.uni3000.uni3000.controller.BuildingStoreController;
+import com.uni3000.uni3000.controller.LearnController;
 import com.uni3000.uni3000.controller.QuestController;
 import com.uni3000.uni3000.controller.UserController;
 import com.uni3000.uni3000.controller.module.ControllerModule;
@@ -22,6 +23,8 @@ public interface ControllerCreator {
 
     QuestController provideQuestController();
 
+    LearnController provideLearnController();
+
     BuildingStoreController provideBuildingStoreController();
 
     void inject(McQuestionController mcQuestionController);
@@ -31,4 +34,6 @@ public interface ControllerCreator {
     void inject (BuildingStoreController buildingStoreController);
 
     void inject (UserController userController);
+
+    void inject (LearnController learnController);
 }

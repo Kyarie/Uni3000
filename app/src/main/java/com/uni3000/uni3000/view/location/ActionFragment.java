@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Button;
 
+import com.uni3000.uni3000.BuildConfig;
 import com.uni3000.uni3000.R;
 import com.uni3000.uni3000.controller.QuestController;
 import com.uni3000.uni3000.controller.module.ControllerModule;
@@ -49,7 +50,7 @@ public class ActionFragment extends Fragment {
         for (Action_Button action : actionButtons) {
             Button button = new Button(getActivity());
             button.setText(action.getActionButtonLabel());
-            button.setOnClickListener(actionClickListener(button));
+            button.setOnClickListener(actionClickListener(button, action.getActionActivity()));
             actionNav.addView(button);
         }
     }
@@ -58,12 +59,17 @@ public class ActionFragment extends Fragment {
         this.location = location;
     }
 
-    OnClickListener actionClickListener(final Button button) {
+    OnClickListener actionClickListener(final Button button, final String actionActivity) {
         return new OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), QuestionActivity.class);
-                intent.putExtra("activity", getActivity().getClass().getName());
-                startActivity(intent);
+                try {
+                    Class<?> actionClass = Class.forName(BuildConfig.APPLICATION_ID + "." + actionActivity);
+                    Intent intent = new Intent(getActivity(), actionClass);
+                    intent.putExtra("activity", getActivity().getClass().getName());
+                    startActivity(intent);
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         };
     }

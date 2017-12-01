@@ -9,4 +9,5 @@ public interface IMcQuestion {
     public Vocab getAnswer();
     public String getQuestion();
     public List<Vocab> getOptions();
+    public List<Vocab> getAllActiveVocab();
 }

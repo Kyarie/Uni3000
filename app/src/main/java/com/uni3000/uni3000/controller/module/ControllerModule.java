@@ -14,7 +14,7 @@ import com.uni3000.uni3000.model.Interface.IMcQuestion;
 import com.uni3000.uni3000.model.Interface.IQuestHelper;
 import com.uni3000.uni3000.model.Interface.IUser;
 import com.uni3000.uni3000.model.LocationHelper;
-import com.uni3000.uni3000.model.McQuestion;
+import com.uni3000.uni3000.model.VocabData;
 import com.uni3000.uni3000.model.QuestHelper;
 import com.uni3000.uni3000.model.User;
 
@@ -49,7 +49,7 @@ public class ControllerModule {
 
     @Provides
     IMcQuestion provideIMcQuestion(DatabaseHelper dbHelper){
-        return new McQuestion(dbHelper);
+        return new VocabData(dbHelper);
     }
 
     @Provides

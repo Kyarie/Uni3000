@@ -1,14 +1,16 @@
 package com.uni3000.uni3000.model;
 
+import com.j256.ormlite.stmt.QueryBuilder;
 import com.uni3000.uni3000.data.DatabaseHelper;
 import com.uni3000.uni3000.model.DatabaseObject.Vocab;
+import com.uni3000.uni3000.model.DatabaseObject.Vocab_Word;
 import com.uni3000.uni3000.model.Interface.IMcQuestion;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class McQuestion implements IMcQuestion{
+public class VocabData implements IMcQuestion{
     Vocab answer;
     List<Vocab> options;
     List<Vocab> usedVocab;
@@ -16,7 +18,7 @@ public class McQuestion implements IMcQuestion{
     int round;
     private DatabaseHelper db;
 
-    public McQuestion(DatabaseHelper db) {
+    public VocabData(DatabaseHelper db) {
         this.db = db;
         answer = null;
         options = new ArrayList<Vocab>();
@@ -40,6 +42,18 @@ public class McQuestion implements IMcQuestion{
 
     public List<Vocab> getOptions() {
         return options;
+    }
+
+    public List<Vocab> getAllActiveVocab() {
+        List<Vocab> vocabList = null;
+        try {
+            QueryBuilder<Vocab_Word,String> vocabWordQuery = db.getVocabWordDao().queryBuilder();
+            vocabWordQuery.where().eq(Vocab_Word.STATUS, 'U').or().eq(Vocab_Word.STATUS, 'N');
+            vocabList = db.getVocabDao().queryBuilder().where().in(Vocab.VOCAB_WORD_ID, vocabWordQuery.query()).query();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return vocabList;
     }
 
     // Helper functions

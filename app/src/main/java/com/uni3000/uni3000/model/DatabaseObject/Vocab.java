@@ -6,13 +6,17 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable
 public class Vocab {
 
-    @DatabaseField(columnName = "VOCAB_ID", generatedId=true)
+    public static final String VOCAB_ID = "VOCAB_ID";
+    public static final String VOCAB_WORD_ID = "VOCAB_WORD_ID";
+    public static final String VOCAB_DEFINITION_ID = "VOCAB_DEFINITION_ID";
+
+    @DatabaseField(columnName = VOCAB_ID, generatedId=true)
     private int vocabId;
 
-    @DatabaseField(columnName = "VOCAB_WORD_ID", foreign = true, foreignAutoCreate = true,foreignAutoRefresh = true)
+    @DatabaseField(columnName = VOCAB_WORD_ID, foreign = true, foreignAutoCreate = true,foreignAutoRefresh = true)
     private Vocab_Word vocabWord;
 
-    @DatabaseField(columnName = "VOCAB_DEFINITION_ID", foreign = true, foreignAutoCreate = true,foreignAutoRefresh = true)
+    @DatabaseField(columnName = VOCAB_DEFINITION_ID, foreign = true, foreignAutoCreate = true,foreignAutoRefresh = true)
     private Vocab_Definition vocabDefinition;
 
     public void setVocabId(int vocabId) {

@@ -14,6 +14,8 @@
     <string name="store_building_price">Price:</string>
     <string name="store_building_profit">Profit:</string>
 
+    <string name="study_search_hint">Type to search</string>
+
     <string name="university_size">Size</string> <!-- size e.g. crappy house -> college -> university -->
     <string name="libraryTab">Library</string>
     <string name="barTab">Bar</string>

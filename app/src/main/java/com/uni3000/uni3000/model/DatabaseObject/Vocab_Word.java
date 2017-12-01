@@ -11,13 +11,17 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable
 public class Vocab_Word {
 
-    @DatabaseField(columnName = "VOCAB_WORD_ID", generatedId=true)
+    public static final String VOCAB_WORD_ID = "VOCAB_WORD_ID";
+    public static final String WORD = "WORD";
+    public static final String STATUS = "STATUS";
+
+    @DatabaseField(columnName = VOCAB_WORD_ID, generatedId=true)
     private int vocabWordId;
 
-    @DatabaseField(columnName = "WORD")
+    @DatabaseField(columnName = WORD)
     private String word;
 
-    @DatabaseField(columnName = "STATUS")
+    @DatabaseField(columnName = STATUS)
     private char status;
 
     public void setVocabId(int vocabWordId) {

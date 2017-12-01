@@ -19,7 +19,7 @@ import com.uni3000.uni3000.model.DatabaseObject.Quest_Action;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final String DATABASE_NAME = "uni3000_db.sqlite";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 5;
     //private static final String DATABASE_PATH = "/data/data/com.uni3000.uni3000/databases/";
 
     // the DAO object we use to access the SimpleData table

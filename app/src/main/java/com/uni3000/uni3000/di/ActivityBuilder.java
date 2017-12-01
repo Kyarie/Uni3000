@@ -4,6 +4,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
 import com.uni3000.uni3000.view.build.BuildFragmentProvider;
+import com.uni3000.uni3000.view.learn.StudyActivity;
 import com.uni3000.uni3000.view.location.BarActivity;
 import com.uni3000.uni3000.view.build.BuildActivity;
 import com.uni3000.uni3000.view.build.BuildModule;
@@ -52,5 +53,8 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = {QuestionModule.class, GamePlayFragmentProvider.class})
     abstract QuestionActivity bindQuestionActivity();
+
+    @ContributesAndroidInjector(modules = {QuestionModule.class})
+    abstract StudyActivity bindStudyActivity();
 
 }

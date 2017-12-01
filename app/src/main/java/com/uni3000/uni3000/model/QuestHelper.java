@@ -20,6 +20,7 @@ public class QuestHelper implements IQuestHelper {
         List<Action_Button> actionButtons = null;
         try {
             Location loc = db.getLocationDao().queryBuilder().where().eq(Location.LOCATION_NAME, location).queryForFirst();
+            // TODO: action need to be based on quests
             actionButtons = db.getActionButtonDao().queryBuilder().where().eq(Action_Button.LOCATION_ID, loc.getLocationId()).query();
         } catch (SQLException e) {
             e.printStackTrace();
