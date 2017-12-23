@@ -6,18 +6,18 @@ import android.content.SharedPreferences;
 import com.uni3000.uni3000.model.Interface.IUser;
 
 public class User implements IUser {
-    private String username;
-    private int level;
-    private Context context;
+    private static String username;
+    private static int level;
+    private static Context context;
 
     //create shared preference
     private static final String PREFS_NAME="prefs";
 
 
     public User(Context context) {
-        this.username = this.getCurrentUsername(context);
-        this.level = this.getCurrentUserLevel(context);
-        this.context = context;
+        User.username = User.getCurrentUsername();
+        User.level = User.getCurrentUserLevel();
+        User.context = context;
     }
 
     public String getUsername() {
@@ -29,27 +29,27 @@ public class User implements IUser {
     }
 
     //set Shared Preference
-    public static void setCurrentUsername(Context context, String input) {
+    public static void setCurrentUsername(String input) {
         SharedPreferences settings = context.getSharedPreferences(PREFS_NAME,0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("username_key", input);
-        editor.commit();
+        editor.apply();
     }
 
-    public static void setCurrentUserLevel(Context context, int input) {
+    public static void setCurrentUserLevel(int input) {
         SharedPreferences settings = context.getSharedPreferences(PREFS_NAME,0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("userLevel_key", input);
-        editor.commit();
+        editor.apply();
     }
 
     //get Shared Preference
-    public static String getCurrentUsername(Context context){
+    public static String getCurrentUsername(){
         SharedPreferences settings = context.getSharedPreferences(PREFS_NAME,0);
         return settings.getString("username_key", "default_username");
     }
 
-    public static int getCurrentUserLevel(Context context){
+    public static int getCurrentUserLevel(){
         SharedPreferences settings = context.getSharedPreferences(PREFS_NAME,0);
         return settings.getInt("userLevel_key", 1);
     }

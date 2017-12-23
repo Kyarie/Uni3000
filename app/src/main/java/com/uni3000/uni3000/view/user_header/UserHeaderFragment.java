@@ -55,7 +55,7 @@ public class UserHeaderFragment extends Fragment {
         ControllerCreator creator = DaggerControllerCreator.builder().controllerModule(new ControllerModule(this.getContext())).build();
         userController = creator.provideUserController();
         user = userController.getCurrentUserInfo();
-        User.setCurrentUsername(this.getActivity().getApplicationContext(),"DesiredUsername");
+        User.setCurrentUsername("DesiredUsername");
     }
 
     @Override
