@@ -16,6 +16,8 @@ import com.uni3000.uni3000.view.location.LocationFragmentProvider;
 import com.uni3000.uni3000.view.location.module.LocationModule;
 import com.uni3000.uni3000.view.location.LocationActivity;
 import com.uni3000.uni3000.view.location.MapActivity;
+import com.uni3000.uni3000.view.login.LoginActivity;
+import com.uni3000.uni3000.view.login.LoginModule;
 import com.uni3000.uni3000.view.map.university.UniversityActivity;
 import com.uni3000.uni3000.view.map.university.UniversityModule;
 import com.uni3000.uni3000.view.map.university.recruit.RecruitActivity;
@@ -56,5 +58,8 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = {QuestionModule.class})
     abstract StudyActivity bindStudyActivity();
+
+    @ContributesAndroidInjector(modules = {LoginModule.class, com.uni3000.uni3000.view.login.FragmentProvider.class})
+    abstract LoginActivity bindLoginActivity();
 
 }

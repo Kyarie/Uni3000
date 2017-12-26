@@ -16,6 +16,7 @@ import com.uni3000.uni3000.controller.McQuestionController;
 
 import com.uni3000.uni3000.controller.module.ControllerModule;
 import com.uni3000.uni3000.model.User;
+import com.uni3000.uni3000.view.login.LoginActivity;
 import com.uni3000.uni3000.viewmodel.UserViewModel;
 import com.uni3000.uni3000.di.DaggerControllerCreator;
 import com.uni3000.uni3000.di.ControllerCreator;
@@ -55,7 +56,7 @@ public class UserHeaderFragment extends Fragment {
         ControllerCreator creator = DaggerControllerCreator.builder().controllerModule(new ControllerModule(this.getContext())).build();
         userController = creator.provideUserController();
         user = userController.getCurrentUserInfo();
-        User.setCurrentUsername("DesiredUsername");
+        //userController.setCurrentUsername(this.getActivity().getApplicationContext(),usernameInput);
     }
 
     @Override
